@@ -1,1 +1,1 @@
-Basic One Path Finder website. Upload these files to Cloudflare Pages.
+Basic One Path Finder website.
