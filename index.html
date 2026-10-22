@@ -49,72 +49,128 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="nav">
     <a href="/" class="brand"><img src="logo-nav.svg" alt="One Path Finder" width="350" height="72"></a>
-    <nav>
+    <nav aria-label="Main">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact" class="btn-small">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div>
-      <p class="eyebrow">Tax & Immigration Document Preparation</p>
-      <h1>One solution for your tax and document preparation needs.</h1>
-      <p class="lead">
-        One Path Finder helps individuals and families prepare tax documents and immigration-related forms with care, clarity, and professionalism.
+  <main id="main">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Tax &amp; immigration document preparation</p>
+        <h1>One solution for your tax and document preparation needs.</h1>
+        <p class="lead">
+          One Path Finder helps individuals and families prepare tax documents and immigration-related forms with care, clarity, and professionalism.
+        </p>
+        <div class="actions">
+          <a href="#contact" class="btn primary">Book a Consultation</a>
+          <a href="#services" class="btn secondary">View Services</a>
+        </div>
+      </div>
+      <aside class="checklist" aria-label="Example document checklist">
+        <p class="card-title">Example document checklist</p>
+        <p class="sub">The kind of list we help you work through.</p>
+        <ul>
+          <li>Identity documents</li>
+          <li>Tax forms and prior returns</li>
+          <li>Proof of address</li>
+          <li>Supporting records</li>
+        </ul>
+        <p class="note">We help you understand what documents are needed, organize your information, and prepare forms accurately.</p>
+      </aside>
+    </section>
+
+    <section id="services" class="section">
+      <h2>How we can help</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Tax Preparation</h3>
+          <p>Individual tax return preparation, document organization, filing support, and basic tax guidance.</p>
+        </div>
+        <div class="service">
+          <h3>Immigration Document Preparation</h3>
+          <p>Assistance with preparing and organizing immigration-related forms and supporting documents where permitted by law.</p>
+        </div>
+        <div class="service">
+          <h3>Document Review &amp; Organization</h3>
+          <p>Checklist preparation, document scanning, file organization, and application package preparation support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps-section" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <ol class="steps">
+        <li>
+          <h3>Contact us</h3>
+          <p>Email or call to tell us what you need help with.</p>
+        </li>
+        <li>
+          <h3>Share your documents</h3>
+          <p>We explain which documents are needed and help you organize them.</p>
+        </li>
+        <li>
+          <h3>We prepare, you review</h3>
+          <p>We prepare your forms for your review.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="about" class="section alt">
+      <h2>Your path, prepared with care.</h2>
+      <p>
+        One Path Finder is built to support people who need practical help with tax and immigration document preparation.
+        We focus on clear communication, organized paperwork, and respectful client service.
       </p>
-      <div class="actions">
-        <a href="#contact" class="btn primary">Book a Consultation</a>
-        <a href="#services" class="btn secondary">View Services</a>
-      </div>
-    </div>
-    <div class="card hero-card">
-      <p class="card-title">Simple. Organized. Reliable.</p>
-      <p>We help you understand what documents are needed, organize your information, and prepare forms accurately.</p>
-    </div>
-  </section>
+      <p class="notice">
+        One Path Finder is not a law firm and does not provide legal advice. Immigration document preparation services are provided only where permitted by law.
+      </p>
+    </section>
 
-  <section id="services" class="section">
-    <p class="eyebrow">Services</p>
-    <h2>How we can help</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Tax Preparation</h3>
-        <p>Individual tax return preparation, document organization, filing support, and basic tax guidance.</p>
+    <section id="faq" class="section">
+      <h2>Common questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Are you a law firm?</summary>
+          <p>No. One Path Finder is not a law firm and does not provide legal advice. Immigration document preparation is offered only where permitted by law.</p>
+        </details>
+        <details>
+          <summary>Can you guarantee an approval or a refund?</summary>
+          <p>No. We can't guarantee any outcome. Decisions are made by the government agency that reviews your application or tax return.</p>
+        </details>
+        <details>
+          <summary>Where can I get official forms?</summary>
+          <p>Official forms and instructions are free from the agencies. USCIS forms are at <a href="https://www.uscis.gov/forms" rel="noopener">uscis.gov/forms</a>, and IRS forms are at <a href="https://www.irs.gov/forms-instructions" rel="noopener">irs.gov/forms-instructions</a>.</p>
+        </details>
+        <details>
+          <summary>Who can answer legal questions about my case?</summary>
+          <p>A licensed attorney or a DOJ-accredited representative can advise you on your specific situation.</p>
+        </details>
       </div>
-      <div class="card">
-        <h3>Immigration Document Preparation</h3>
-        <p>Assistance with preparing and organizing immigration-related forms and supporting documents where permitted by law.</p>
-      </div>
-      <div class="card">
-        <h3>Document Review & Organization</h3>
-        <p>Checklist preparation, document scanning, file organization, and application package preparation support.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about" class="section alt">
-    <p class="eyebrow">About</p>
-    <h2>Your path, prepared with care.</h2>
-    <p>
-      One Path Finder is built to support people who need practical help with tax and immigration document preparation. 
-      We focus on clear communication, organized paperwork, and respectful client service.
-    </p>
-    <p class="notice">
-      Disclaimer: One Path Finder is not a law firm and does not provide legal advice. Immigration document preparation services are provided only where permitted by law.
-    </p>
-  </section>
-
-  <section id="contact" class="section contact">
-    <p class="eyebrow">Contact</p>
-    <h2>Start with a simple conversation.</h2>
-    <p>Email: <a href="mailto:info@onepathfinder.com">info@onepathfinder.com</a></p>
-    <p>Phone: <a href="tel:+17322136014">(732) 213-6014</a></p>
-  </section>
+    <section id="contact" class="section contact">
+      <h2>Start with a simple conversation.</h2>
+      <div class="contact-list">
+        <div>
+          <span class="label">Email</span>
+          <a href="mailto:info@onepathfinder.com">info@onepathfinder.com</a>
+        </div>
+        <div>
+          <span class="label">Phone</span>
+          <a href="tel:+17322136014">(732) 213-6014</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
     <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
     <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
   </footer>
