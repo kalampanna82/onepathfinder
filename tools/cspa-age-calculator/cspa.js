@@ -98,16 +98,28 @@
     if (!form) return;
     var out = document.getElementById('cspa-result');
 
-    function row(label, value) {
-      return '<tr><th scope="row">' + label + '</th><td>' + value + '</td></tr>';
-    }
     function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function row(label, value) { return '<tr><th scope="row">' + label + '</th><td>' + value + '</td></tr>'; }
+    function yearsOf(a) { return a.years + a.months / 12 + a.days / 365; }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var r = calculate({
-        dob: form.dob.value, filed: form.filed.value, approved: form.approved.value, current: form.current.value
-      });
+    // Two bars (decorative; the numbers are in the table) with a marker at age 21.
+    function bars(r) {
+      var a = yearsOf(r.ageAtAvailability), c = yearsOf(r.cspaAge);
+      var max = Math.max(25, Math.ceil(a) + 2);
+      function pct(v) { return Math.min(100, Math.max(0, (v / max) * 100)).toFixed(1); }
+      var mark = pct(21);
+      function bar(label, v, cls) {
+        return '<div class="bar-row"><span class="bar-label">' + label + '</span>' +
+          '<div class="bar"><i class="' + cls + '" style="width:' + pct(v) + '%"></i><b class="bar-mark" style="left:' + mark + '%"></b></div></div>';
+      }
+      return '<div class="bars" aria-hidden="true">' +
+        bar('Actual age', a, 'bar-actual') +
+        bar('CSPA age', c, 'bar-cspa') +
+        '<p class="small bar-note">The vertical line marks age 21.</p></div>';
+    }
+
+    function show(values) {
+      var r = calculate(values);
       if (r.error) {
         out.className = 'result result-error';
         out.innerHTML = '<p><strong>Check your dates.</strong> ' + esc(r.error) + '</p>';
@@ -118,25 +130,72 @@
         ? 'Estimate: under 21 under the CSPA formula'
         : 'Estimate: 21 or older under the CSPA formula';
       var next = r.under21
-        ? '<p>If this is right, the child may be protected from aging out, but only if they take a qualifying step to seek permanent residence within one year of the visa availability date (before ' + esc(r.deadlineText) + '). Don’t wait until the last day.</p>'
-        : '<p>If this is right, the child would be 21 or older for green card purposes. What happens next depends on the visa category and the family’s situation. A licensed immigration attorney or DOJ-accredited representative can explain the options.</p>';
+        ? '<p>If this is right, the child may be protected from aging out, but only if they take a qualifying step to seek permanent residence within one year of the visa availability date (before ' + esc(r.deadlineText) + '). Don\u2019t wait until the last day.</p>'
+        : '<p>If this is right, the child would be 21 or older for green card purposes. What happens next depends on the visa category and the family\u2019s situation. A licensed immigration attorney or DOJ-accredited representative can explain the options.</p>';
       out.className = 'result ' + (r.under21 ? 'result-ok' : 'result-no');
       out.innerHTML =
-        '<h3>' + headline + '</h3>' +
+        '<h3>' + headline + '</h3>' + bars(r) +
         '<table class="result-table"><tbody>' +
         row('Visa availability date', esc(r.availabilityText) + '<br><span class="small">Used ' + esc(r.availabilityReason) + '.</span>') +
-        row('Child’s age on that date', esc(r.ageAtAvailabilityText)) +
+        row('Child\u2019s age on that date', esc(r.ageAtAvailabilityText)) +
         row('Days the petition was pending', esc(r.pendingDays.toLocaleString('en-US'))) +
         row('CSPA age (age minus pending days)', '<strong>' + esc(r.cspaAgeText) + '</strong>') +
         row('One-year deadline to take a qualifying step', 'Before ' + esc(r.deadlineText)) +
         '</tbody></table>' + next +
         '<p class="small">This is an estimate for general information only. It is not legal advice and does not guarantee any outcome.</p>';
       out.focus();
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      show({ dob: form.dob.value, filed: form.filed.value, approved: form.approved.value, current: form.current.value });
     });
 
     form.addEventListener('reset', function () {
       out.className = 'result';
       out.innerHTML = '';
+      closeAllHelp();
+    });
+
+    // Worked example from the guide.
+    var example = document.getElementById('cspa-example');
+    if (example) {
+      example.addEventListener('click', function () {
+        form.dob.value = '2003-06-05';
+        form.filed.value = '2019-01-15';
+        form.approved.value = '2019-09-20';
+        form.current.value = '2024-12-01';
+        show({ dob: form.dob.value, filed: form.filed.value, approved: form.approved.value, current: form.current.value });
+      });
+    }
+
+    // "?" help panels (accessible disclosure buttons).
+    function setHelp(btn, open) {
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!panel) return;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.hidden = !open;
+    }
+    function closeAllHelp() {
+      Array.prototype.forEach.call(form.querySelectorAll('.help-btn'), function (b) { setHelp(b, false); });
+    }
+    Array.prototype.forEach.call(form.querySelectorAll('.help-btn'), function (btn) {
+      btn.addEventListener('click', function () {
+        setHelp(btn, btn.getAttribute('aria-expanded') !== 'true');
+      });
+    });
+    Array.prototype.forEach.call(form.querySelectorAll('.help-close'), function (c) {
+      c.addEventListener('click', function () {
+        var panel = c.closest('.help');
+        var btn = form.querySelector('.help-btn[aria-controls="' + panel.id + '"]');
+        if (btn) { setHelp(btn, false); btn.focus(); }
+      });
+    });
+    form.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var panel = e.target.closest && e.target.closest('.help');
+      var btn = panel ? form.querySelector('.help-btn[aria-controls="' + panel.id + '"]') : (e.target.classList && e.target.classList.contains('help-btn') ? e.target : null);
+      if (btn && btn.getAttribute('aria-expanded') === 'true') { setHelp(btn, false); btn.focus(); }
     });
   });
 })(typeof window !== 'undefined' ? window : this);
