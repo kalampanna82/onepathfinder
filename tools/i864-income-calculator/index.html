@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>I-864 Sponsor Income Calculator | One Path Finder</title>
+  <meta name="description" content="Check whether a sponsor income meets the Form I-864 minimum for their household size. Free tool that runs in your browser. General information, not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/i864-income-calculator/">
+  <meta name="theme-color" content="#123c69">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="I-864 Sponsor Income Calculator | One Path Finder">
+  <meta property="og:description" content="Check whether a sponsor income meets the Form I-864 minimum for their household size. Free tool that runs in your browser. General information, not legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/i864-income-calculator/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="350" height="72"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>I-864 sponsor income calculator</h1>
+    <p class="lead">Check whether a sponsor&rsquo;s income meets the minimum for the Form I-864 Affidavit of Support, based on household size.</p>
+    <div class="callout"><p><strong>Estimate only.</strong> This is general information, not legal advice, and it can&rsquo;t guarantee any outcome. Results are only as accurate as what you enter.</p></div>
+    <h2>How to use it</h2>
+    <p>The sponsor is the person who signs the Form I-864 promising financial support. Enter the sponsor&rsquo;s household and annual income. The tool compares the income with the minimum for that household size, using the 2026 federal poverty guidelines.</p>
+
+    <form id="i864-form" class="calc" novalidate>
+      <div class="field">
+        <label for="region">Where does the sponsor live?</label>
+        <select id="region" name="region">
+          <option value="lower48">The 48 states, D.C., and U.S. territories</option>
+          <option value="alaska">Alaska</option>
+          <option value="hawaii">Hawaii</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="military">Is the sponsor on active duty in the U.S. armed forces, sponsoring a spouse or child?</label>
+        <select id="military" name="military">
+          <option value="no">No (minimum is 125% of the poverty guideline)</option>
+          <option value="yes">Yes (minimum is 100%)</option>
+        </select>
+      </div>
+
+      <h3>Household size</h3>
+      <p class="hint">The sponsor counts as 1. Don&rsquo;t count the same person twice.</p>
+      <div class="field"><label for="spouse">Sponsor&rsquo;s spouse</label>
+        <input type="number" id="spouse" name="spouse" min="0" max="1" value="0" inputmode="numeric">
+        <p class="hint">If the spouse is the person being sponsored, count them under &ldquo;People being sponsored&rdquo; instead.</p></div>
+      <div class="field"><label for="dependents">Sponsor&rsquo;s dependent children and other tax dependents</label>
+        <input type="number" id="dependents" name="dependents" min="0" value="0" inputmode="numeric"></div>
+      <div class="field"><label for="sponsored">People being sponsored on this I-864</label>
+        <input type="number" id="sponsored" name="sponsored" min="1" value="1" inputmode="numeric"></div>
+      <div class="field"><label for="previous">People sponsored earlier whose obligation hasn&rsquo;t ended</label>
+        <input type="number" id="previous" name="previous" min="0" value="0" inputmode="numeric"></div>
+      <p class="household">Household size: <span id="household-size">2</span></p>
+
+      <div class="field">
+        <label for="income">Sponsor&rsquo;s annual income ($)</label>
+        <p class="hint">Use the income the Form I-864 instructions describe, such as the total income on the most recent tax return.</p>
+        <input type="number" id="income" name="income" min="0" step="1" inputmode="decimal" placeholder="45000">
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Check income</button>
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="i864-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>If the income is short</h2>
+    <p>The Form I-864 instructions describe other ways to meet the requirement, such as a joint sponsor, adding income from certain household members with Form I-864A, or counting qualifying assets. Assets are counted at a multiple of the shortfall that depends on the relationship between the sponsor and the immigrant, so check the instructions or ask a professional.</p>
+
+    <h2>Things this tool does not do</h2>
+    <p>It doesn&rsquo;t decide whether income is counted correctly, whether a household member qualifies, or which poverty guideline edition USCIS will apply to your case. Check the current Form I-864P.</p>
+    <p class="small"><strong>Privacy:</strong> Everything is calculated in your browser. What you enter is not sent to us or stored.</p>
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/cspa-age-calculator/">CSPA age calculator</a></li>
+      <li><a href="/tools/n400-eligibility-calculator/">N-400 eligibility calculator</a></li>
+      <li><a href="/tools/uscis-fee-calculator/">USCIS filing fee calculator</a></li>
+      <li><a href="/tools/green-card-reentry-calculator/">Green card re-entry date calculator</a></li>
+    </ul>
+<div class="sources"><h2>Official sources</h2><ul><li><a href="https://www.uscis.gov/i-864" rel="noopener">USCIS: Form I-864, Affidavit of Support</a></li><li><a href="https://www.uscis.gov/i-864p" rel="noopener">USCIS: Form I-864P, poverty guidelines</a></li><li><a href="https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines" rel="noopener">HHS: Poverty guidelines</a></li></ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/i864-income-calculator/i864.js"></script>
+</body>
+</html>

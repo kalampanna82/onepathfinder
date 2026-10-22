@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>N-400 Eligibility Calculator | One Path Finder</title>
+  <meta name="description" content="Estimate your earliest N-400 filing date and check physical presence and continuous residence. Free tool that runs in your browser. General information, not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/n400-eligibility-calculator/">
+  <meta name="theme-color" content="#123c69">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="N-400 Eligibility Calculator | One Path Finder">
+  <meta property="og:description" content="Estimate your earliest N-400 filing date and check physical presence and continuous residence. Free tool that runs in your browser. General information, not legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/n400-eligibility-calculator/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="350" height="72"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>N-400 eligibility calculator</h1>
+    <p class="lead">Estimate the earliest date you can file for naturalization, and check two common requirements: physical presence and continuous residence.</p>
+    <div class="callout"><p><strong>Estimate only.</strong> This is general information, not legal advice, and it can&rsquo;t guarantee any outcome. Results are only as accurate as what you enter.</p></div>
+    <h2>Who this is for</h2>
+    <p>Permanent residents thinking about applying for U.S. citizenship through the general 5-year rule, or the 3-year rule for people married to and living with a U.S. citizen. Other paths, such as military service, have different rules.</p>
+
+    <form id="n400-form" class="calc" novalidate>
+      <div class="field">
+        <label for="gc">Date you became a permanent resident</label>
+        <p class="hint">Use the &ldquo;Resident Since&rdquo; date on your green card.</p>
+        <input type="date" id="gc" name="gc" required>
+      </div>
+
+      <fieldset class="field">
+        <legend class="label">Which rule applies to you?</legend>
+        <div class="choices">
+          <label><input type="radio" name="rule" value="5" checked> 5-year rule (most applicants)</label>
+          <label><input type="radio" name="rule" value="3"> 3-year rule: married to and living with the same U.S. citizen spouse for the past 3 years, and that spouse has been a U.S. citizen for those 3 years</label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <p class="label">Trips outside the United States</p>
+        <p class="hint">Add each trip since you became a permanent resident, or at least in the last 5 years. The day you leave and the day you return both count as days in the U.S.</p>
+        <div id="trips"></div>
+        <button type="button" class="btn secondary" id="add-trip">Add another trip</button>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Calculate</button>
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="n400-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>How the estimate works</h2>
+    <ol>
+      <li><strong>Earliest filing date:</strong> your green card date plus 5 years (or 3 years), minus 90 days. USCIS lets you file up to 90 days before you meet the residence requirement.</li>
+      <li><strong>Physical presence:</strong> you generally need to have been physically in the U.S. for at least half of the period: 913 days for the 5-year rule, or 548 days for the 3-year rule. The tool adds up your days outside the U.S. and subtracts them.</li>
+      <li><strong>Continuous residence:</strong> a trip of more than six months but less than a year can create a presumption that continuous residence was broken. A trip of a year or more generally breaks it.</li>
+    </ol>
+
+    <h2>What this tool does not check</h2>
+    <p>Good moral character, time spent living in your state or USCIS district, age, English and civics tests, selective service, taxes, past immigration or criminal issues, and exceptions for certain groups. Any of these can change your answer. Check the official sources below, and ask a licensed immigration attorney or DOJ-accredited representative if you are unsure.</p>
+    <p class="small"><strong>Privacy:</strong> Everything is calculated in your browser. What you enter is not sent to us or stored.</p>
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/cspa-age-calculator/">CSPA age calculator</a></li>
+      <li><a href="/tools/i864-income-calculator/">I-864 sponsor income calculator</a></li>
+      <li><a href="/tools/uscis-fee-calculator/">USCIS filing fee calculator</a></li>
+      <li><a href="/tools/green-card-reentry-calculator/">Green card re-entry date calculator</a></li>
+    </ul>
+<div class="sources"><h2>Official sources</h2><ul><li><a href="https://www.uscis.gov/n-400" rel="noopener">USCIS: N-400, Application for Naturalization</a></li><li><a href="https://www.uscis.gov/citizenship/learn-about-citizenship/eligibility-requirements-applying-for-naturalization" rel="noopener">USCIS: Citizenship eligibility requirements</a></li><li><a href="https://www.uscis.gov/feecalculator" rel="noopener">USCIS: Fee calculator</a></li></ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/n400-eligibility-calculator/n400.js"></script>
+</body>
+</html>

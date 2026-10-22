@@ -210,3 +210,21 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
 .path .go{margin-top:auto;font-weight:700;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
 .path:hover,.path:focus-visible{border-color:var(--navy);box-shadow:0 2px 10px rgba(15,34,56,.12)}
 @media(max-width:850px){.paths{grid-template-columns:1fr}.path{padding:24px}}
+.status{border-left:5px solid var(--teal);background:#fff;padding:10px 16px;margin:12px 0}
+.status p{margin:4px 0 0}
+.status.warn{border-left-color:#b7791f}
+.status.bad{border-left-color:#b3261e}
+.trip{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:8px}
+.trip .field{margin-bottom:0}
+.trip .btn{padding:10px 16px}
+.field input[type=number],.field select{font:inherit;color:var(--ink);background:#fff;width:100%;max-width:320px;min-height:48px;padding:10px 12px;border:1px solid #7b8c9e;border-radius:6px}
+.field input[type=number]:focus-visible,.field select:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+.choices{display:flex;flex-direction:column;gap:8px}
+.choices label,.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:0}
+.fee-form{border-top:1px solid var(--line);padding:14px 0}
+.fee-pick{display:flex;gap:12px;align-items:flex-start;font-weight:400;cursor:pointer}
+.fee-opts{margin:10px 0 0 30px}
+.fee-opts label{display:block;font-weight:600;margin:0 0 4px}
+.fee-opts .check{margin-top:10px;font-weight:400}
+.household{margin:0 0 24px;font-weight:700}
+.fee-opts select{font:inherit;color:var(--ink);background:#fff;min-height:48px;padding:10px 12px;border:1px solid #7b8c9e;border-radius:6px;min-width:12rem}
