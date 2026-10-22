@@ -1,7 +1,8 @@
 :root{
-  --ink:#0f2238;
-  --navy:#123c69;
-  --navy-dark:#0d2f52;
+  --ink:#0b1f3a;
+  --navy:#0b1f3a;
+  --navy-dark:#050f1f;
+  --amber:#ffb020;
   --teal:#0a7a67;
   --paper:#f5f7fa;
   --line:#d9e1e8;
@@ -64,7 +65,7 @@ p{margin:0 0 1em}
 
 /* Services */
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px}
-.service{border-top:3px solid var(--navy);padding-top:20px}
+.service{border-top:4px solid var(--amber);padding-top:20px}
 .service p{margin:0}
 
 /* How it works */
@@ -201,8 +202,7 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
 #resources .services{row-gap:40px}
 
 .paths{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:8px}
-.path{display:flex;flex-direction:column;padding:32px;background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:6px;color:var(--ink);text-decoration:none}
-.path:nth-child(2){border-top-color:var(--teal)}
+.path{display:flex;flex-direction:column;padding:32px;background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--amber);border-radius:6px;color:var(--ink);text-decoration:none}
 .path h3{font-family:var(--serif);font-size:1.7rem;margin:0 0 10px}
 .path p{margin:0 0 14px;color:var(--muted)}
 .path ul{margin:0 0 22px;padding-left:20px;color:var(--ink)}
