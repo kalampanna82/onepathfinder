@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CSPA Age Calculator | One Path Finder</title>
+  <meta name="description" content="Estimate a child's age under the Child Status Protection Act (CSPA). Free tool that runs in your browser. General information, not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/cspa-age-calculator/">
+  <meta name="theme-color" content="#123c69">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="CSPA Age Calculator | One Path Finder">
+  <meta property="og:description" content="Estimate a child's age under the Child Status Protection Act (CSPA). Free, runs in your browser.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/cspa-age-calculator/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="350" height="72"></a>
+    <nav aria-label="Main">
+      <a href="/#services">Services</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>CSPA age calculator</h1>
+    <p class="lead">Estimate a child&rsquo;s age under the Child Status Protection Act (CSPA), which can keep a child from &ldquo;aging out&rdquo; of a green card case.</p>
+
+    <div class="callout">
+      <p><strong>Estimate only.</strong> This is general information, not legal advice, and it can&rsquo;t guarantee any outcome. Results are only as accurate as the dates you enter.</p>
+    </div>
+
+    <h2>Who this is for</h2>
+    <ul>
+      <li><strong>Works for:</strong> children of permanent residents (the F2A category) and derivative children listed on a family-sponsored or employment-based petition. For a derivative child, use the parent&rsquo;s petition dates.</li>
+      <li><strong>Not for:</strong> immediate relatives of U.S. citizens, diversity visa cases, and refugee or asylee derivatives. They follow different rules.</li>
+    </ul>
+
+    <form id="cspa-form" class="calc" novalidate>
+      <div class="field">
+        <label for="dob">Child&rsquo;s date of birth</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+
+      <div class="field">
+        <label for="filed">Date the petition was filed</label>
+        <p class="hint" id="filed-hint">Use the date USCIS received the petition, shown as the received date on the Form I-797 receipt notice.</p>
+        <input type="date" id="filed" name="filed" required aria-describedby="filed-hint">
+      </div>
+
+      <div class="field">
+        <label for="approved">Date the petition was approved</label>
+        <p class="hint" id="approved-hint">Shown on the Form I-797 approval notice.</p>
+        <input type="date" id="approved" name="approved" required aria-describedby="approved-hint">
+      </div>
+
+      <div class="field">
+        <label for="current">A date in the month your priority date became current</label>
+        <p class="hint" id="current-hint">In the State Department&rsquo;s Visa Bulletin, open the <strong>Final Action Dates</strong> chart for your category and country. Find the first monthly bulletin where your priority date is earlier than the date shown. Enter any date in that month. We use the first day of the month.</p>
+        <input type="date" id="current" name="current" required aria-describedby="current-hint">
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Calculate</button>
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="cspa-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>How the estimate works</h2>
+    <ol>
+      <li>The visa availability date is the later of two dates: the petition approval date, or the first day of the Visa Bulletin month when the priority date became current.</li>
+      <li>We work out the child&rsquo;s age on that date.</li>
+      <li>We subtract the number of days the petition was pending, counted from the filing date to the approval date.</li>
+      <li>If the result is under 21, the child is under 21 under the CSPA formula. The child must also take a qualifying step to seek permanent residence within one year of the visa availability date.</li>
+    </ol>
+    <p>For a full walkthrough with an example, read <a href="/blog/how-to-calculate-cspa-age/">How to calculate CSPA age yourself</a>.</p>
+
+    <h2>Rules that can change the answer</h2>
+    <p>This tool uses the Final Action Dates chart. USCIS requires that chart for adjustment of status applications filed on or after August 15, 2025. Applications that were already pending before that date may be treated under an earlier, more favorable policy. If that might apply to you, speak with a licensed immigration attorney or DOJ-accredited representative. Policies can change, so check the sources below.</p>
+
+    <p class="small"><strong>Privacy:</strong> Everything is calculated in your browser. The dates you enter are not sent to us or stored.</p>
+
+    <div class="sources">
+      <h2>Official sources</h2>
+      <ul>
+        <li><a href="https://www.uscis.gov/policy-manual/volume-7-part-a-chapter-7" rel="noopener">USCIS Policy Manual, Volume 7, Part A, Chapter 7: Child Status Protection Act</a></li>
+        <li><a href="https://www.uscis.gov/newsroom/alerts/uscis-updates-policy-on-cspa-age-calculation" rel="noopener">USCIS policy alert: CSPA age calculation (August 2025)</a></li>
+        <li><a href="https://www.law.cornell.edu/uscode/text/8/1153" rel="noopener">8 U.S.C. &sect; 1153(h) (INA &sect; 203(h)), the CSPA age formula</a></li>
+        <li><a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">U.S. Department of State Visa Bulletin</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/cspa-age-calculator/cspa.js"></script>
+</body>
+</html>

@@ -129,6 +129,26 @@ footer p{margin:0 0 6px;color:var(--muted)}
 .article p,.article li{max-width:40em}
 .callout{border-left:4px solid var(--teal);background:var(--paper);padding:14px 18px;margin:28px 0;border-radius:0 6px 6px 0}
 .callout p{margin:0;color:var(--ink)}
+.small{font-size:.92rem;color:var(--muted)}
+.calc{margin:32px 0}
+.field{margin-bottom:24px}
+.field label{display:block;font-weight:600;margin-bottom:4px}
+.hint{font-size:.95rem;color:var(--muted);margin:0 0 8px}
+.field input[type=date]{font:inherit;color:var(--ink);background:#fff;width:100%;max-width:320px;min-height:48px;padding:10px 12px;border:1px solid #7b8c9e;border-radius:6px}
+.field input[type=date]:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+button.btn{font:inherit;font-weight:700;cursor:pointer}
+.result{margin:8px 0 40px;border-radius:0 8px 8px 0;outline:none}
+.result:empty{display:none}
+.result h3{margin:0 0 12px}
+.result-ok,.result-no,.result-error{padding:20px 22px;background:var(--paper);border-left:5px solid var(--teal)}
+.result-no{border-left-color:var(--navy)}
+.result-error{background:#fdf2f1;border-left-color:#b3261e}
+.result-error p{margin:0;color:var(--ink)}
+.result-table{width:100%;border-collapse:collapse;margin:0 0 16px}
+.result-table th,.result-table td{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border-top:1px solid var(--line)}
+.result-table th{font-weight:600;width:44%;color:var(--ink)}
+.result-table td{color:var(--ink)}
+.result p{color:var(--ink)}
 .sources{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:.98rem}
 .sources h2{font-size:1.1rem;margin:0 0 8px}
 
