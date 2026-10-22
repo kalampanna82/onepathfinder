@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>USCIS Filing Fee Calculator | One Path Finder</title>
+  <meta name="description" content="Add up government filing fees for common USCIS forms such as I-130, I-485, I-765, N-400 and I-90. Confirm fees on uscis.gov before filing.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/uscis-fee-calculator/">
+  <meta name="theme-color" content="#123c69">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="USCIS Filing Fee Calculator | One Path Finder">
+  <meta property="og:description" content="Add up government filing fees for common USCIS forms such as I-130, I-485, I-765, N-400 and I-90. Confirm fees on uscis.gov before filing.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/uscis-fee-calculator/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="350" height="72"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>USCIS filing fee calculator</h1>
+    <p class="lead">Add up the government filing fees for common immigration forms. Choose the forms you plan to file.</p>
+    <div class="callout"><p><strong>Confirm before you pay.</strong> Fees change, and a wrong fee can cause USCIS to reject your filing. These amounts were last checked in October 2026. Confirm the exact fee on the <a href="https://www.uscis.gov/feecalculator" rel="noopener">official USCIS fee calculator</a> before you file. This is general information, not legal advice. It covers government fees only, not attorney or service fees.</p></div>
+
+    <form id="fee-form" class="calc" novalidate>
+      <p class="form-tip">Check each form you plan to file. Then choose online or paper.</p>
+      <div id="fee-forms"></div>
+    </form>
+
+    <div id="fee-result" class="result" aria-live="polite"></div>
+
+    <h2>What is included</h2>
+    <p>Biometric services are included in these fees. This tool does not cover every form, every fee category, fee waivers (except the reduced N-400 fee shown), or fees for asylum, parole, temporary protected status and similar filings. Some applicants pay a different fee or $0, such as certain military applicants. Check the official fee schedule for your situation.</p>
+    <p>USCIS has proposed raising the N-400 fee. A proposal is not final, so this tool uses the current fee. Check the official sources for updates before you file.</p>
+    <p class="small"><strong>Privacy:</strong> Everything is calculated in your browser. What you enter is not sent to us or stored.</p>
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/cspa-age-calculator/">CSPA age calculator</a></li>
+      <li><a href="/tools/n400-eligibility-calculator/">N-400 eligibility calculator</a></li>
+      <li><a href="/tools/i864-income-calculator/">I-864 sponsor income calculator</a></li>
+      <li><a href="/tools/green-card-reentry-calculator/">Green card re-entry date calculator</a></li>
+    </ul>
+<div class="sources"><h2>Official sources</h2><ul><li><a href="https://www.uscis.gov/feecalculator" rel="noopener">USCIS: Fee calculator</a></li><li><a href="https://www.uscis.gov/forms/filing-fees" rel="noopener">USCIS: Filing fees</a></li><li><a href="https://www.uscis.gov/g-1055" rel="noopener">USCIS: Form G-1055, Fee Schedule</a></li></ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/uscis-fee-calculator/fees.js"></script>
+</body>
+</html>

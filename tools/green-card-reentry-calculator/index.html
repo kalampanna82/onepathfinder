@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Green Card Re-entry Date Calculator | One Path Finder</title>
+  <meta name="description" content="Enter the date you leave the U.S. to see the six-month and one-year marks for a green card holder trip. General information, not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/green-card-reentry-calculator/">
+  <meta name="theme-color" content="#123c69">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="Green Card Re-entry Date Calculator | One Path Finder">
+  <meta property="og:description" content="Enter the date you leave the U.S. to see the six-month and one-year marks for a green card holder trip. General information, not legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/green-card-reentry-calculator/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="350" height="72"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>Green card re-entry date calculator</h1>
+    <p class="lead">Enter the date you plan to leave the United States. See the date six months later, which is the point where a trip is longer than six months.</p>
+    <div class="callout"><p><strong>Estimate only.</strong> This is general information, not legal advice, and it can&rsquo;t guarantee any outcome. Results are only as accurate as what you enter.</p></div>
+    <h2>Why six months matters</h2>
+    <p>A permanent resident can travel abroad and return, but long trips can cause problems. A trip of more than six months can lead officers to ask whether you kept your permanent residence. It can also affect the continuous residence requirement if you later apply for citizenship. After a year abroad, a green card by itself generally is not enough to come back; a re-entry permit, applied for before you leave, is designed for longer trips.</p>
+
+    <form id="reentry-form" class="calc" novalidate>
+      <div class="field">
+        <label for="depart">Date you leave the United States</label>
+        <input type="date" id="depart" name="depart" required>
+      </div>
+      <div class="field">
+        <label for="ret">Date you plan to return (optional)</label>
+        <p class="hint">Add this to check a planned trip against the six-month and one-year marks.</p>
+        <input type="date" id="ret" name="ret">
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn primary">Show dates</button>
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="reentry-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>Things to know</h2>
+    <ul>
+      <li>Staying under six months does not guarantee entry or protect your status. Officers look at whether you kept your permanent residence: your home, job, taxes, family and plans in the U.S.</li>
+      <li>Flights get delayed or canceled. Plan to arrive well before the six-month date.</li>
+      <li>If you may be away longer than a year, ask a licensed immigration attorney or DOJ-accredited representative about a re-entry permit (Form I-131) <em>before</em> you leave.</li>
+      <li>Moving abroad, even for a shorter time, can raise questions about abandoning your residence.</li>
+    </ul>
+    <p class="small"><strong>Privacy:</strong> Everything is calculated in your browser. What you enter is not sent to us or stored.</p>
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/cspa-age-calculator/">CSPA age calculator</a></li>
+      <li><a href="/tools/n400-eligibility-calculator/">N-400 eligibility calculator</a></li>
+      <li><a href="/tools/i864-income-calculator/">I-864 sponsor income calculator</a></li>
+      <li><a href="/tools/uscis-fee-calculator/">USCIS filing fee calculator</a></li>
+    </ul>
+<div class="sources"><h2>Official sources</h2><ul><li><a href="https://www.uscis.gov/green-card/after-we-grant-your-green-card/maintaining-permanent-residence" rel="noopener">USCIS: Maintaining permanent residence</a></li><li><a href="https://www.uscis.gov/i-131" rel="noopener">USCIS: Form I-131, re-entry permit</a></li></ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/green-card-reentry-calculator/reentry.js"></script>
+</body>
+</html>
