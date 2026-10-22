@@ -8,6 +8,7 @@ The mark is a "Checkpoint": a checkmark that runs into a map pin. It says "done 
 |---|---|
 | `svg/onepathfinder-logo-light.svg` | Primary horizontal logo on light backgrounds (the website header) |
 | `svg/onepathfinder-logo-dark.svg` | Primary horizontal logo on dark backgrounds |
+| `svg/onepathfinder-logo-nav-light.svg`, `svg/onepathfinder-logo-nav-dark.svg` | Compact logo without the tagline, for website headers and anything under about 200 px wide |
 | `svg/onepathfinder-icon-light.svg`, `svg/onepathfinder-icon-dark.svg` | Icon only |
 | `svg/onepathfinder-logo-mono-black.svg`, `svg/onepathfinder-logo-mono-white.svg` | One-colour logo for print, stamps, fax, watermarks |
 | `svg/onepathfinder-icon-mono-black.svg`, `svg/onepathfinder-icon-mono-white.svg` | One-colour icon |
