@@ -1,0 +1,6 @@
+/*.css
+  Cache-Control: no-cache
+/*.js
+  Cache-Control: no-cache
+/tools/*
+  Cache-Control: no-cache
