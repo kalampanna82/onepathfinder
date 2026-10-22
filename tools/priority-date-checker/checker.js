@@ -99,7 +99,7 @@
       var html;
       if (r.status === 'current') {
         out.className = 'result pd-yes';
-        html = '<p class="pd-head"><span aria-hidden="true">✓</span> Current</p><p>Your priority date is earlier than the cutoff date in the ' + esc(data.bulletinMonth) + ' Visa Bulletin (' + esc(chartName(r.chart)) + ': ' + esc(r.cutoffText) + ').</p>';
+        html = '<p class="pd-head"><span aria-hidden="true">✓</span> Current</p>' + (r.cutoff === 'C' ? '<p>The ' + esc(data.bulletinMonth) + ' Visa Bulletin (' + esc(chartName(r.chart)) + ') shows &ldquo;C&rdquo; for this category and country, which means current for every priority date.</p>' : '<p>Your priority date is earlier than the cutoff date in the ' + esc(data.bulletinMonth) + ' Visa Bulletin (' + esc(chartName(r.chart)) + ': ' + esc(r.cutoffText) + ').</p>');
       } else if (r.status === 'unavailable') {
         out.className = 'result pd-no';
         html = '<p class="pd-head"><span aria-hidden="true">✗</span> Not current</p><p>Visas in this category are marked unavailable (&ldquo;U&rdquo;) in the ' + esc(data.bulletinMonth) + ' Visa Bulletin.</p>';
