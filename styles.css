@@ -136,6 +136,9 @@ footer p{margin:0 0 6px;color:var(--muted)}
 .label-row{display:flex;align-items:center;gap:10px;margin-bottom:4px}
 .label-row label{margin:0}
 .form-tip{margin:0 0 24px;color:var(--muted)}
+.select-row{display:flex;gap:12px;flex-wrap:wrap}
+.select-row select{font:inherit;color:var(--ink);background:#fff;min-height:48px;padding:10px 12px;border:1px solid #7b8c9e;border-radius:6px;min-width:9rem}
+.select-row select:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
 .help-btn,.help-btn-demo{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex:none;border-radius:50%;border:2px solid var(--navy);background:#fff;color:var(--navy);font:700 1rem/1 var(--sans);cursor:pointer;padding:0}
 .help-btn-demo{width:24px;height:24px;font-size:.85rem;vertical-align:middle;cursor:default}
 .help-btn:hover,.help-btn[aria-expanded="true"]{background:var(--navy);color:#fff}
