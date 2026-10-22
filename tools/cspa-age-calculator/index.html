@@ -84,10 +84,10 @@
 
       <div class="field">
         <div class="label-row">
-          <label for="current">A date in the month your priority date became current</label>
+          <label for="cmonth" id="current-label">Which month&rsquo;s Visa Bulletin first showed your case as current?</label>
           <button type="button" class="help-btn" aria-expanded="false" aria-controls="help-current" aria-label="Help: the Visa Bulletin month">?</button>
         </div>
-        <p class="hint" id="current-hint">Use the <strong>Final Action Dates</strong> chart in the Visa Bulletin. Tap the question mark to see how to find it.</p>
+        <p class="hint" id="current-hint">Use the <strong>Final Action Dates</strong> chart. Tap the question mark to see how to find it.</p>
         <div class="help" id="help-current" hidden>
           <p><strong>What is the Visa Bulletin?</strong> A monthly publication from the U.S. Department of State. For each visa category and country, it lists a cutoff date. If your priority date is earlier than the cutoff, a visa is available. It has two charts: <strong>Final Action Dates</strong> and <strong>Dates for Filing</strong>. For CSPA age, use Final Action Dates.</p>
           <p><strong>How to check when your visa became available:</strong></p>
@@ -96,12 +96,19 @@
             <li>Open the <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">Visa Bulletin</a> and go to the <em>Final Action Dates</em> chart for family-sponsored (or employment-based) cases.</li>
             <li>Find your category (for a child of a permanent resident, F2A) and your country column. Most people use &ldquo;All Chargeability Areas.&rdquo; Some countries, such as India, Mexico and the Philippines, have their own columns. For a derivative child, use the parent&rsquo;s category and country.</li>
             <li>If your priority date is <strong>earlier</strong> than the date shown, a visa was available that month. &ldquo;C&rdquo; means current, and &ldquo;U&rdquo; means unavailable.</li>
-            <li>Go back through earlier bulletins, which are in the archive on the same site, to find the <strong>first</strong> month when that was true.</li>
+            <li>Go back through earlier bulletins, which are in the archive on the same site, to find the <strong>first</strong> month when that was true. Pick that bulletin&rsquo;s month and year here.</li>
           </ol>
-          <p><strong>Which day do I count?</strong> Yes, the first day of that bulletin&rsquo;s month. Use the month named on the bulletin, for example &ldquo;December 2024,&rdquo; even though it is published earlier. If the petition was approved after that day, the approval date is used instead. The calculator does this for you, so enter any date in that month.</p>
+          <p><strong>Which day is counted?</strong> The first day of that bulletin&rsquo;s month. Use the month named on the bulletin, for example &ldquo;December 2024,&rdquo; even though it is published earlier. If the petition was approved after that day, the approval date is used instead. The calculator does this for you.</p>
           <button type="button" class="help-close">Close</button>
         </div>
-        <input type="date" id="current" name="current" required aria-describedby="current-hint">
+        <div class="select-row">
+          <select id="cmonth" name="cmonth" required aria-describedby="current-hint">
+            <option value="">Month</option>
+          </select>
+          <select id="cyear" name="cyear" required aria-label="Year of the Visa Bulletin" aria-describedby="current-hint">
+            <option value="">Year</option>
+          </select>
+        </div>
       </div>
 
       <div class="actions">

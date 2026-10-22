@@ -53,7 +53,7 @@
     if (!dob) return { error: 'Enter the child’s date of birth.' };
     if (!filed) return { error: 'Enter the date the petition was filed.' };
     if (!approved) return { error: 'Enter the date the petition was approved.' };
-    if (!cur) return { error: 'Enter a date in the Visa Bulletin month when the priority date became current.' };
+    if (!cur) return { error: 'Choose the month and year of the Visa Bulletin when the priority date first became current.' };
     if (cmp(approved, filed) < 0) return { error: 'The approval date can’t be before the filing date.' };
 
     var curFirst = { y: cur.y, m: cur.m, d: 1 };
@@ -97,6 +97,23 @@
     var form = document.getElementById('cspa-form');
     if (!form) return;
     var out = document.getElementById('cspa-result');
+
+    // Month and year pickers for the Visa Bulletin month.
+    var MONTHS_ALL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var monthSel = form.cmonth, yearSel = form.cyear;
+    MONTHS_ALL.forEach(function (name, i) {
+      var o = document.createElement('option'); o.value = String(i + 1); o.textContent = name; monthSel.appendChild(o);
+    });
+    for (var y = new Date().getFullYear() + 1; y >= 2003; y--) {
+      var oy = document.createElement('option'); oy.value = String(y); oy.textContent = String(y); yearSel.appendChild(oy);
+    }
+    function currentValue() {
+      if (!monthSel.value || !yearSel.value) return '';
+      return yearSel.value + '-' + ('0' + monthSel.value).slice(-2) + '-01';
+    }
+    function values() {
+      return { dob: form.dob.value, filed: form.filed.value, approved: form.approved.value, current: currentValue() };
+    }
 
     function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
     function row(label, value) { return '<tr><th scope="row">' + label + '</th><td>' + value + '</td></tr>'; }
@@ -148,7 +165,7 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      show({ dob: form.dob.value, filed: form.filed.value, approved: form.approved.value, current: form.current.value });
+      show(values());
     });
 
     form.addEventListener('reset', function () {
@@ -164,8 +181,9 @@
         form.dob.value = '2003-06-05';
         form.filed.value = '2019-01-15';
         form.approved.value = '2019-09-20';
-        form.current.value = '2024-12-01';
-        show({ dob: form.dob.value, filed: form.filed.value, approved: form.approved.value, current: form.current.value });
+        monthSel.value = '12';
+        yearSel.value = '2024';
+        show(values());
       });
     }
 
