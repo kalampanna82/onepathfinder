@@ -45,31 +45,68 @@
     </ul>
 
     <form id="cspa-form" class="calc" novalidate>
+      <p class="form-tip">Tap the <span class="help-btn-demo" aria-hidden="true">?</span> next to a question if you&rsquo;re not sure where to find the date.</p>
+
       <div class="field">
-        <label for="dob">Child&rsquo;s date of birth</label>
+        <div class="label-row">
+          <label for="dob">Child&rsquo;s date of birth</label>
+        </div>
         <input type="date" id="dob" name="dob" required>
       </div>
 
       <div class="field">
-        <label for="filed">Date the petition was filed</label>
-        <p class="hint" id="filed-hint">Use the date USCIS received the petition, shown as the received date on the Form I-797 receipt notice.</p>
-        <input type="date" id="filed" name="filed" required aria-describedby="filed-hint">
+        <div class="label-row">
+          <label for="filed">Date the petition was filed</label>
+          <button type="button" class="help-btn" aria-expanded="false" aria-controls="help-filed" aria-label="Help: date the petition was filed">?</button>
+        </div>
+        <div class="help" id="help-filed" hidden>
+          <p><strong>What is it?</strong> The day USCIS received the petition. For most family cases that is Form I-130. For employment cases it is Form I-140.</p>
+          <p><strong>Which paper?</strong> The <strong>Form I-797C, Notice of Action</strong>, also called the receipt notice. USCIS mails it after it accepts the petition. Use the <em>Received Date</em> printed on it. This is not the same as the date of the notice.</p>
+          <p>For a child listed on a parent&rsquo;s petition, use the parent&rsquo;s petition.</p>
+          <button type="button" class="help-close">Close</button>
+        </div>
+        <input type="date" id="filed" name="filed" required>
       </div>
 
       <div class="field">
-        <label for="approved">Date the petition was approved</label>
-        <p class="hint" id="approved-hint">Shown on the Form I-797 approval notice.</p>
-        <input type="date" id="approved" name="approved" required aria-describedby="approved-hint">
+        <div class="label-row">
+          <label for="approved">Date the petition was approved</label>
+          <button type="button" class="help-btn" aria-expanded="false" aria-controls="help-approved" aria-label="Help: date the petition was approved">?</button>
+        </div>
+        <div class="help" id="help-approved" hidden>
+          <p><strong>What is it?</strong> The day USCIS approved the petition.</p>
+          <p><strong>Which paper?</strong> The <strong>Form I-797, Notice of Action</strong> that says <em>Approval Notice</em> near the top. The date of that notice is usually the approval date. Your online USCIS case status also shows when the petition was approved.</p>
+          <p>Don&rsquo;t use the day the notice arrived in the mail. If your papers show different dates, or you&rsquo;re unsure, ask a licensed immigration attorney or DOJ-accredited representative.</p>
+          <button type="button" class="help-close">Close</button>
+        </div>
+        <input type="date" id="approved" name="approved" required>
       </div>
 
       <div class="field">
-        <label for="current">A date in the month your priority date became current</label>
-        <p class="hint" id="current-hint">In the State Department&rsquo;s Visa Bulletin, open the <strong>Final Action Dates</strong> chart for your category and country. Find the first monthly bulletin where your priority date is earlier than the date shown. Enter any date in that month. We use the first day of the month.</p>
+        <div class="label-row">
+          <label for="current">A date in the month your priority date became current</label>
+          <button type="button" class="help-btn" aria-expanded="false" aria-controls="help-current" aria-label="Help: the Visa Bulletin month">?</button>
+        </div>
+        <p class="hint" id="current-hint">Use the <strong>Final Action Dates</strong> chart in the Visa Bulletin. Tap the question mark to see how to find it.</p>
+        <div class="help" id="help-current" hidden>
+          <p><strong>What is the Visa Bulletin?</strong> A monthly publication from the U.S. Department of State. For each visa category and country, it lists a cutoff date. If your priority date is earlier than the cutoff, a visa is available. It has two charts: <strong>Final Action Dates</strong> and <strong>Dates for Filing</strong>. For CSPA age, use Final Action Dates.</p>
+          <p><strong>How to check when your visa became available:</strong></p>
+          <ol>
+            <li>Find your <strong>priority date</strong> on the Form I-797 approval notice.</li>
+            <li>Open the <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">Visa Bulletin</a> and go to the <em>Final Action Dates</em> chart for family-sponsored (or employment-based) cases.</li>
+            <li>Find your category (for a child of a permanent resident, F2A) and your country column. Most people use &ldquo;All Chargeability Areas.&rdquo; Some countries, such as India, Mexico and the Philippines, have their own columns. For a derivative child, use the parent&rsquo;s category and country.</li>
+            <li>If your priority date is <strong>earlier</strong> than the date shown, a visa was available that month. &ldquo;C&rdquo; means current, and &ldquo;U&rdquo; means unavailable.</li>
+            <li>Go back through earlier bulletins, which are in the archive on the same site, to find the <strong>first</strong> month when that was true.</li>
+          </ol>
+          <p><strong>Which day do I count?</strong> Yes, the first day of that bulletin&rsquo;s month. Use the month named on the bulletin, for example &ldquo;December 2024,&rdquo; even though it is published earlier. If the petition was approved after that day, the approval date is used instead. The calculator does this for you, so enter any date in that month.</p>
+          <button type="button" class="help-close">Close</button>
+        </div>
         <input type="date" id="current" name="current" required aria-describedby="current-hint">
       </div>
 
       <div class="actions">
         <button type="submit" class="btn primary">Calculate</button>
+        <button type="button" class="btn secondary" id="cspa-example">Try an example</button>
         <button type="reset" class="btn secondary">Clear</button>
       </div>
     </form>
