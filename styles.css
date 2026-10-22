@@ -179,6 +179,11 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
 .result p{color:var(--ink)}
 .sources{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:.98rem}
 .sources h2{font-size:1.1rem;margin:0 0 8px}
+.related{margin-top:36px;padding:20px 24px;background:var(--paper);border:1px solid var(--line);border-radius:6px}
+.related h2{font-size:1.1rem;margin:0 0 8px}
+.related ul{margin:0;padding-left:20px}
+.related li{margin:6px 0}
+.learn{margin-top:8px}
 
 @media(max-width:850px){
   .hero{grid-template-columns:1fr;gap:36px;padding:48px 24px}
@@ -193,3 +198,4 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
   .page{padding:48px 24px}
   footer{padding:28px 24px}
 }
+#resources .services{row-gap:40px}
