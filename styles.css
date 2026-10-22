@@ -228,3 +228,14 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
 .fee-opts .check{margin-top:10px;font-weight:400}
 .household{margin:0 0 24px;font-weight:700}
 .fee-opts select{font:inherit;color:var(--ink);background:#fff;min-height:48px;padding:10px 12px;border:1px solid #7b8c9e;border-radius:6px;min-width:12rem}
+
+.pd-yes,.pd-no{padding:22px 24px;border-left:8px solid}
+.pd-yes{background:#e6f6ed;border-left-color:#1a7a3c}
+.pd-no{background:#fdecea;border-left-color:#b3261e}
+.pd-head{font-family:var(--serif);font-size:1.9rem;font-weight:700;margin:0 0 8px;line-height:1.2}
+.pd-yes .pd-head{color:#14602f}
+.pd-no .pd-head{color:#8f1d17}
+.pd-head span{margin-right:8px}
+.choices.stack{margin-top:6px}
+fieldset.field{border:0;padding:0;margin:0 0 24px;min-width:0}
+fieldset.field legend{padding:0;font-weight:600;margin-bottom:4px}
