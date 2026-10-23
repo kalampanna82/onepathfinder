@@ -1,0 +1,16 @@
+/* NJ residency tracker: one question at a time. Neutral colors: resident or nonresident is not good or bad. */
+.nj-q{margin:0;padding:0;border:0}
+.nj-q legend{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin:0 0 6px;padding:0}
+.nj-step{font-size:.85rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);margin:0 0 6px}
+.nj-opts{display:grid;gap:10px;margin:14px 0 0;max-width:36em}
+.nj-opts .btn{width:100%;text-align:left;font-weight:600}
+.nj-nav{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 0}
+.nj-link{font:inherit;font-weight:600;color:var(--navy);background:none;border:0;padding:6px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.nj-answers{margin:0 0 18px;padding-left:20px;font-size:.95rem;color:var(--muted)}
+.nj-answers li{margin:2px 0}
+.nj-h{font-size:1.5rem;margin:0 0 10px}
+.nj-notes{margin:12px 0 0;padding-left:20px}
+.nj-notes li{margin:0 0 8px}
+.nj-wrap{overflow-x:auto;margin:8px 0 12px}
+.nj-wrap .result-table th{width:auto}
+.nj-h3{font-size:1.1rem;margin:24px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
