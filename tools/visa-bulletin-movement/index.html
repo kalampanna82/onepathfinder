@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Visa Bulletin Movement: See What Changed This Month | One Path Finder</title>
+  <meta name="description" content="See how every Visa Bulletin cutoff date moved from last month to this month, for family and employment green card categories. Green is forward, red is backward, blue is no change. Free tool. Not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/visa-bulletin-movement/">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="Visa Bulletin Movement: See What Changed This Month | One Path Finder">
+  <meta property="og:description" content="See how every Visa Bulletin cutoff date moved from last month to this month. Green is forward, red is backward, blue is no change.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/visa-bulletin-movement/">
+  <meta property="og:image" content="https://onepathfinder.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://onepathfinder.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/tools/visa-bulletin-movement/movement.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="273" height="56"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page vbm">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>Visa Bulletin movement</h1>
+    <p class="lead">See how each cutoff date in the Visa Bulletin moved from last month to this month. Green means the date moved forward, red means it moved backward, and blue means no change.</p>
+    <div class="callout"><p><strong>General information only, not legal advice.</strong> A cutoff date moving forward doesn&rsquo;t mean your case is approved. Confirm every date in the <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">official Visa Bulletin</a>. Not sure which chart applies to you? <a href="https://www.uscis.gov/visabulletininfo" rel="noopener">USCIS says each month</a> whether to use Final Action Dates or Dates for Filing for adjustment of status.</p></div>
+
+    <section class="vbm-controls" aria-label="Filters">
+      <div class="vbm-row"><span class="vbm-lbl" id="vbm-l1">Category</span>
+        <div class="vbm-seg" id="vbm-kind" role="group" aria-labelledby="vbm-l1">
+          <button type="button" data-v="eb" aria-pressed="true">Employment</button>
+          <button type="button" data-v="fam" aria-pressed="false">Family</button>
+        </div></div>
+      <div class="vbm-row"><span class="vbm-lbl" id="vbm-l2">Chart</span>
+        <div class="vbm-seg" id="vbm-chart" role="group" aria-labelledby="vbm-l2">
+          <button type="button" data-v="fad" aria-pressed="true">Final Action Dates</button>
+          <button type="button" data-v="dff" aria-pressed="false">Dates for Filing</button>
+        </div></div>
+      <div class="vbm-row"><span class="vbm-lbl" id="vbm-l3">Country</span>
+        <div class="vbm-seg" id="vbm-country" role="group" aria-labelledby="vbm-l3"></div></div>
+      <div class="vbm-row"><span class="vbm-lbl">View</span>
+        <label class="vbm-only" for="vbm-only"><input type="checkbox" id="vbm-only"> Only show changes</label></div>
+    </section>
+
+    <p class="small" id="vbm-meta" aria-live="polite"></p>
+    <div class="vbm-summary" aria-live="polite">
+      <div class="vbm-stat up"><b id="vbm-up">0</b><span>&#9650; Moved forward</span></div>
+      <div class="vbm-stat same"><b id="vbm-same">0</b><span>&#9679; No change</span></div>
+      <div class="vbm-stat down"><b id="vbm-down">0</b><span>&#9660; Moved backward</span></div>
+    </div>
+
+    <div class="vbm-grid" id="vbm-grid"></div>
+
+    <h2>How to read this</h2>
+    <p>Each card is one category. Every row shows the new cutoff date and how far it moved from last month. You are eligible only if your <a href="/blog/what-is-a-priority-date/">priority date</a> is earlier than the cutoff date. &ldquo;Current&rdquo; means anyone in that category can proceed. Read more in <a href="/blog/what-is-the-visa-bulletin/">what the Visa Bulletin is</a>. To test your own date, use the <a href="/tools/priority-date-checker/">priority date checker</a>.</p>
+
+    <h2>Good to know</h2>
+    <ul>
+      <li>Dates can move forward, stay still, or move backward. A backward move is called retrogression.</li>
+      <li>Rest of World means every country not listed separately. China means mainland China born.</li>
+      <li>For F2A, the bulletin has extra notes about applicants who are exempt from the per-country limit. Read the notes in the official bulletin.</li>
+      <li>Nothing you do on this page is sent anywhere.</li>
+    </ul>
+
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+
+    <div class="sources"><h2>Official sources</h2><ul>
+      <li><a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">U.S. Department of State: Visa Bulletin</a></li>
+      <li><a href="https://www.uscis.gov/visabulletininfo" rel="noopener">USCIS: Adjustment of status filing charts</a></li>
+    </ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/visa-bulletin-movement/movement.js"></script>
+</body>
+</html>
