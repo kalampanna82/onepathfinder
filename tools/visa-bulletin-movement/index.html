@@ -40,10 +40,16 @@
   <main id="main" class="page vbm">
     <a class="back" href="/tools/">&larr; All tools</a>
     <h1>Visa Bulletin movement</h1>
-    <p class="lead">See how each cutoff date in the Visa Bulletin moved from last month to this month. Green means the date moved forward, red means it moved backward, and blue means no change.</p>
+    <p class="lead">See how each cutoff date in the Visa Bulletin moved over the last month, 3 months or 6 months. Green means the date moved forward, red means it moved backward, and blue means no change.</p>
     <div class="callout"><p><strong>General information only, not legal advice.</strong> A cutoff date moving forward doesn&rsquo;t mean your case is approved. Confirm every date in the <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">official Visa Bulletin</a>. Not sure which chart applies to you? <a href="https://www.uscis.gov/visabulletininfo" rel="noopener">USCIS says each month</a> whether to use Final Action Dates or Dates for Filing for adjustment of status.</p></div>
 
     <section class="vbm-controls" aria-label="Filters">
+      <div class="vbm-row"><span class="vbm-lbl" id="vbm-l0">Compare</span>
+        <div class="vbm-seg" id="vbm-period" role="group" aria-labelledby="vbm-l0">
+          <button type="button" data-v="oct" aria-pressed="true">Last month</button>
+          <button type="button" data-v="aug" aria-pressed="false">3 months</button>
+          <button type="button" data-v="may" aria-pressed="false">6 months</button>
+        </div></div>
       <div class="vbm-row"><span class="vbm-lbl" id="vbm-l1">Category</span>
         <div class="vbm-seg" id="vbm-kind" role="group" aria-labelledby="vbm-l1">
           <button type="button" data-v="eb" aria-pressed="true">Employment</button>
@@ -70,11 +76,13 @@
     <div class="vbm-grid" id="vbm-grid"></div>
 
     <h2>How to read this</h2>
-    <p>Each card is one category. Every row shows the new cutoff date and how far it moved from last month. You are eligible only if your <a href="/blog/what-is-a-priority-date/">priority date</a> is earlier than the cutoff date. &ldquo;Current&rdquo; means anyone in that category can proceed. Read more in <a href="/blog/what-is-the-visa-bulletin/">what the Visa Bulletin is</a> and <a href="/blog/what-is-visa-bulletin-movement/">what Visa Bulletin movement means</a>. To test your own date, use the <a href="/tools/priority-date-checker/">priority date checker</a>.</p>
+    <p>Each card is one category. Every row shows the new cutoff date and how far it moved since the month you pick: last month, 3 months ago or 6 months ago. You are eligible only if your <a href="/blog/what-is-a-priority-date/">priority date</a> is earlier than the cutoff date. &ldquo;Current&rdquo; means anyone in that category can proceed. Read more in <a href="/blog/what-is-the-visa-bulletin/">what the Visa Bulletin is</a> and <a href="/blog/what-is-visa-bulletin-movement/">what Visa Bulletin movement means</a>. To test your own date, use the <a href="/tools/priority-date-checker/">priority date checker</a>.</p>
 
     <h2>Good to know</h2>
     <ul>
-      <li>Dates can move forward, stay still, or move backward. A backward move is called retrogression.</li>
+      <li>Dates can move forward, stay still, or move backward. A backward move is called retrogression. A category that was current and now has a date also counts as backward.</li>
+      <li>Unavailable means no visa numbers can be issued in that category for that country that month.</li>
+      <li>Movement over 3 or 6 months compares only the two bulletins, so a date that moved up and then back down in between shows as the net change.</li>
       <li>Rest of World means every country not listed separately. China means mainland China born.</li>
       <li>For F2A, the bulletin has extra notes about applicants who are exempt from the per-country limit. Read the notes in the official bulletin.</li>
       <li>Nothing you do on this page is sent anywhere.</li>
