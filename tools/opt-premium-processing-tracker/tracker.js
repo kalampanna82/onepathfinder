@@ -51,10 +51,10 @@
     for (var t = start + DAY; t <= until; t += DAY) if (isBusiness(t, skipHolidays)) n++;
     return n;
   }
-  // The dates of business day 1 to 30 after the start date.
-  function schedule(start, skipHolidays) {
-    var out = [], t = start;
-    while (out.length < DAYS) { t += DAY; if (isBusiness(t, skipHolidays)) out.push(t); }
+  // The dates of business day 1 to n (30 unless given) after the start date.
+  function schedule(start, skipHolidays, n) {
+    var out = [], t = start; n = n || DAYS;
+    while (out.length < n) { t += DAY; if (isBusiness(t, skipHolidays)) out.push(t); }
     return out;
   }
 
