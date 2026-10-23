@@ -65,11 +65,12 @@
     else { $('pw-months').value = ''; note.textContent = 'Look up your form on the USCIS processing times page and type the number it shows.'; }
   }
 
-  function render() {
+  function render(fromButton) {
     var box = $('pw-result'), cat = CATS[parseInt($('pw-cat').value, 10)];
     var start = parseISO($('pw-start').value) || parseISO(todayISO());
     var months = num('pw-months');
-    if (months === null) { box.innerHTML = '<p>Enter how long regular processing takes for your form, in months, from the <a href="https://egov.uscis.gov/processing-times/" rel="noopener">USCIS processing times page</a>. It shows &ldquo;80% of cases are completed within&rdquo; a number of months. That number goes in the box.</p>'; return; }
+    box.className = 'result';
+    if (months === null) { if (fromButton) box.className = 'result result-error'; box.innerHTML = '<p>' + (fromButton ? '<strong>One more thing.</strong> ' : '') + 'Enter how long regular processing takes for your form, in months, from the <a href="https://egov.uscis.gov/processing-times/" rel="noopener">USCIS processing times page</a>. It shows &ldquo;80% of cases are completed within&rdquo; a number of months. That number goes in the box.</p>'; return; }
     var need = parseISO($('pw-need').value), r = compare(cat, start, months, need);
     var html = '<h2 class="pw-h">' + esc(cat.name) + '</h2>';
     html += '<table class="result-table pw-table"><thead><tr><th scope="col"></th><th scope="col">Regular</th><th scope="col">Premium</th></tr></thead><tbody>' +
@@ -94,13 +95,21 @@
     box.innerHTML = html;
   }
 
+  // The button: work it out, then bring the answer into view (the answer sits below the form on a phone).
+  function show() {
+    render(true);
+    var box = $('pw-result');
+    if (box.scrollIntoView) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    box.focus({ preventScroll: true });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var form = $('pw-form'); if (!form) return;
     $('pw-cat').innerHTML = CATS.map(function (c, i) { return '<option value="' + i + '">' + esc(c.name) + '</option>'; }).join('');
     $('pw-cat').value = '5'; $('pw-start').value = todayISO();
-    ['pw-cat', 'pw-start', 'pw-months', 'pw-need'].forEach(function (id) { $(id).addEventListener('change', render); $(id).addEventListener('input', render); });
+    ['pw-cat', 'pw-start', 'pw-months', 'pw-need'].forEach(function (id) { $(id).addEventListener('change', function () { render(); }); $(id).addEventListener('input', function () { render(); }); });
     $('pw-cat').addEventListener('change', prefill);
-    form.addEventListener('submit', function (e) { e.preventDefault(); render(); });
+    form.addEventListener('submit', function (e) { e.preventDefault(); show(); });
     form.addEventListener('reset', function () { setTimeout(function () { $('pw-cat').value = '5'; $('pw-start').value = todayISO(); prefill(); render(); }, 0); });
     fetch('processing.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : { items: {} }; }).catch(function () { return { items: {} }; }).then(function (j) {
       known = j.items || {}; prefill(); render();
