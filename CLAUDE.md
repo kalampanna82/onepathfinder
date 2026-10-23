@@ -24,7 +24,7 @@ Plain static HTML, one shared `styles.css`, one shared `script.js`, small per-to
 - Monthly Visa Bulletin: add the new month to `tools/priority-date-checker/bulletin.json` (keep the previous month; each bulletin has `effectiveFrom` = 12:01 AM Eastern on the 1st of its month, and the page switches by itself) and to the data in `tools/visa-bulletin-movement/movement.js`. A scheduled task does this and opens a PR.
 
 ## Live tools
-CSPA age calculator, N-400 eligibility, I-864 sponsor income, USCIS fee calculator, green card re-entry date, priority date checker, Visa Bulletin movement.
+CSPA age calculator, N-400 eligibility, I-864 sponsor income, USCIS fee calculator, green card re-entry date, priority date checker, Visa Bulletin movement, SEVIS fee calculator.
 I-130 petition tool is ON HOLD until the owner has more research and lawyer guidance. Do not build or publish it.
 
 ## Brand
@@ -50,5 +50,6 @@ Multilingual versions: Spanish, Hindi, Urdu, Bangla, Arabic, Filipino/Tagalog (A
 ## Decisions and open items
 - 2026-10-22: Added Visa Bulletin movement tool (Oct to Nov 2026) at /tools/visa-bulletin-movement/ (PR #13). It was briefly added to the PentoGIS repo by mistake and removed.
 - 2026-10-22: Priority date checker now holds October and November bulletins and switches to November at 12:01 AM Eastern on Nov 1, 2026. Merge before then.
+- 2026-10-22: Added SEVIS I-901 fee calculator at /tools/sevis-fee-calculator/. Amounts are in `CATS` in `sevis.js` (F/M $350, J-1 $220, au pair/camp/summer work $35, G-programs and F-2/M-2/J-2 $0), last checked against ICE in Oct 2026. Re-check on ice.gov/sevis/i901 when ICE announces a change.
 - Open: choose a path-based logo concept; then update the logo files and `brand/`.
 - Open: multilingual rollout plan and URL structure (for example /es/).
