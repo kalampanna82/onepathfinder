@@ -54,12 +54,10 @@
         <input type="date" id="pw-start" name="start">
       </div>
       <div class="field">
-        <label for="pw-low">How long does regular processing take, in months?</label>
-        <p class="hint">Look up your form on the <a href="https://egov.uscis.gov/processing-times/" rel="noopener">USCIS processing times page</a>. It shows a range such as 2 to 4 months. Enter the shorter number first, then the longer. For one number, use the same in both boxes. You can type decimals such as 1.5.</p>
-        <div class="pw-row2">
-          <input type="number" id="pw-low" name="low" min="0" max="60" step="0.5" inputmode="decimal" placeholder="Shorter, e.g. 2" aria-label="Shorter regular processing time in months">
-          <input type="number" id="pw-high" name="high" min="0" max="60" step="0.5" inputmode="decimal" placeholder="Longer, e.g. 4" aria-label="Longer regular processing time in months">
-        </div>
+        <label for="pw-months">How long does regular processing take, in months?</label>
+        <p class="hint">On the <a href="https://egov.uscis.gov/processing-times/" rel="noopener">USCIS processing times page</a>, pick your form, category and office. It shows &ldquo;80% of cases are completed within&rdquo; a number of months. We fill this in when we have a recent number. You can change it.</p>
+        <input type="number" id="pw-months" name="months" min="0" max="60" step="0.5" inputmode="decimal" placeholder="e.g. 5">
+        <p class="small" id="pw-known" aria-live="polite"></p>
       </div>
       <div class="field">
         <label for="pw-need">The date you need an answer by <span class="small">(optional)</span></label>

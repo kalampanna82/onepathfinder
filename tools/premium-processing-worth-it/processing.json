@@ -1,0 +1,7 @@
+{
+  "note": "Regular processing times as USCIS shows them: 80% of cases are completed within this many months (egov.uscis.gov/processing-times). Keys match the category ids in worth.js. Add or update an entry when you read a new value. Leave a category out if there is no value; the tool then asks the visitor to type it.",
+  "asOf": "2026-10-23",
+  "items": {
+    "opt": { "form": "I-765", "category": "Based on a request by a qualified F-1 academic student (c)(3)", "office": "Service Center Operations (SCOPS)", "months": 5, "asOf": "2026-10-23" }
+  }
+}
