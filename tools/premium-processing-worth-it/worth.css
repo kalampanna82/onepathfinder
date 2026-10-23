@@ -1,0 +1,15 @@
+/* Premium vs regular processing. Green only for "in time", red for "too late", per the site's status colors. */
+.pw-h{font-size:1.5rem;margin:0 0 10px}
+.pw-h3{font-size:1.15rem;margin:18px 0 8px}
+.pw-table th,.pw-table td{vertical-align:top}
+.pw-msg{margin:14px 0;padding:12px 16px;border-left:6px solid}
+.pw-info{background:#e8f0fa;border-left-color:#1f5fae}
+.pw-warn{background:#fff4e0;border-left-color:#a15c00}
+.pw-need{list-style:none;margin:0 0 8px;padding:0}
+.pw-need li{padding:8px 0;border-top:1px solid var(--line)}
+.pw-tag{display:inline-block;min-width:7.5rem;text-align:center;padding:2px 10px;border-radius:999px;font-weight:700;font-size:.9rem;color:#fff;margin-right:10px}
+.pw-tag.pw-go{background:#17744a}
+.pw-tag.pw-warn{background:#a15c00;border:0}
+.pw-tag.pw-late{background:#b3261e}
+.pw-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.pw-tag{display:block;margin:0 0 4px;min-width:0;width:max-content}}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OPT Premium Processing Tracker: Business Day Count | One Path Finder</title>
+  <meta name="description" content="Track the 30 business days USCIS has to act on a premium processing request for F-1 OPT or STEM OPT. See your day count, calendar days and the date business day 30 falls on. Free tool. Not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/opt-premium-processing-tracker/">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="OPT Premium Processing Tracker: Business Day Count | One Path Finder">
+  <meta property="og:description" content="Track the 30 business days USCIS has to act on a premium processing request for F-1 OPT or STEM OPT. See your day count, calendar days and the date business day 30 falls on. Free tool. Not legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/opt-premium-processing-tracker/">
+  <meta property="og:image" content="https://onepathfinder.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://onepathfinder.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/tools/opt-premium-processing-tracker/tracker.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="273" height="56"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>OPT premium processing day tracker</h1>
+    <p class="lead">USCIS has <strong>30 business days</strong> to act on a premium processing request for F-1 OPT or STEM OPT. Business days leave out weekends and federal holidays, so 30 business days is about six calendar weeks. Enter your date to see where you are.</p>
+    <div class="callout"><p><strong>An estimate, not USCIS&rsquo;s count.</strong> This tool counts from a calendar. USCIS decides the real start date and which days count, and closures can change the count. Check your case status on the <a href="https://www.uscis.gov/" rel="noopener">USCIS website</a>. This is general information, not legal advice.</p></div>
+
+    <form id="opt-form" class="calc" novalidate>
+      <div class="field">
+        <label for="opt-recv">Date USCIS received your Form I-907</label>
+        <p class="hint">Look for &ldquo;Received date&rdquo; on the receipt notice (Form I-797C) or in your USCIS online account. If you filed the I-907 together with your I-765, it is the date USCIS received both. If you added premium processing to a case already pending, use the I-907 date, not the original I-765 date.</p>
+        <input type="date" id="opt-recv" name="recv">
+      </div>
+      <div class="field">
+        <label for="opt-rfe">Date USCIS received your answer to a request for evidence <span class="small">(optional)</span></label>
+        <p class="hint">Only if USCIS asked for more evidence or sent a notice of intent to deny. The count stops until USCIS receives your response. Under the rule, a new full period of 30 business days then begins, and this tool counts it from that date.</p>
+        <input type="date" id="opt-rfe" name="rfe">
+      </div>
+      <div class="field">
+        <label for="opt-asof">Count as of <span class="small">(today by default)</span></label>
+        <p class="hint">Change this to see where you will be on another day.</p>
+        <input type="date" id="opt-asof" name="asof">
+      </div>
+      <div class="actions">
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="opt-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>How the 30 business days work</h2>
+    <ul>
+      <li><strong>When it starts.</strong> For F-1 work permits, the federal rule says the count begins when USCIS has received everything it needs to decide the case, including the Form I-907 and the fee. This tool counts from the receipt date you enter, with receipt day as day 0 and business day 1 as the next business day.</li>
+      <li><strong>What counts as a business day.</strong> The rule says a day the federal government is open. Weekends, federal holidays, and weather or other closures do not count. This tool skips weekends and the 11 federal holidays (including the Friday or Monday a holiday is observed). It cannot know about closures, so a closure would push the real date later.</li>
+      <li><strong>What &ldquo;acting&rdquo; means.</strong> USCIS can approve, deny, or send a request for evidence or a notice of intent to deny within the period. An approval is not guaranteed.</li>
+      <li><strong>The card is separate.</strong> After approval, producing and mailing the EAD card can take another one to three weeks. That time is not part of the 30 business days.</li>
+      <li><strong>Premium processing fee.</strong> $1,780 for I-765 OPT and STEM OPT, paid on top of the I-765 filing fee. See the <a href="/tools/uscis-fee-calculator/">USCIS fee calculator</a>.</li>
+    </ul>
+
+    <h2>If 30 business days pass</h2>
+    <ul>
+      <li>Check your case status online first. The notice may be in the mail.</li>
+      <li>Under the rule, USCIS refunds the premium processing fee when it does not act in time, and it keeps working on the case (it may keep the fee if it opens a fraud investigation). Ask how to request it through your USCIS account or the Contact Center (800-375-5283).</li>
+      <li>Talk to your school&rsquo;s international student office (your DSO) before you change travel or work plans.</li>
+    </ul>
+    <p class="small"><strong>Privacy:</strong> Everything is worked out in your browser. The dates you enter are not sent to us or stored.</p>
+
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/sevis-fee-calculator/">How much is the SEVIS fee?</a></li>
+      <li><a href="/tools/uscis-fee-calculator/">USCIS filing fee calculator</a></li>
+      <li><a href="/tools/green-card-reentry-calculator/">Green card re-entry date</a></li>
+    </ul>
+
+    <div class="sources"><h2>Official sources</h2><ul>
+      <li><a href="https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-106/section-106.4" rel="noopener">8 CFR 106.4: Premium request processing (timeframes, clock start, business days, refunds)</a></li>
+      <li><a href="https://www.uscis.gov/i-907" rel="noopener">USCIS: Form I-907, Request for Premium Processing Service</a></li>
+      <li><a href="https://www.uscis.gov/forms/all-forms/how-do-i-request-premium-processing" rel="noopener">USCIS: How do I request premium processing?</a></li>
+      <li><a href="https://egov.uscis.gov/processing-times/" rel="noopener">USCIS: Case processing times</a></li>
+      <li><a href="https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/" rel="noopener">OPM: Federal holidays</a></li>
+    </ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/opt-premium-processing-tracker/tracker.js"></script>
+</body>
+</html>
