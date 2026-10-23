@@ -1,0 +1,18 @@
+/* Substantial Presence Test calculator. Neutral colors: resident or nonresident is not good or bad. */
+.spt-h{font-size:1.5rem;margin:0 0 10px}
+.spt-h3{font-size:1.1rem;margin:20px 0 8px}
+.spt-wrap{overflow-x:auto;margin:8px 0 12px}
+.spt-t{border-collapse:collapse;width:100%;min-width:300px}
+.spt-t th,.spt-t td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+.spt-t th{font-size:.9rem;color:var(--muted)}
+.spt-sum td{font-weight:700;border-top:2px solid var(--ink)}
+.spt-checks{list-style:none;margin:0 0 12px;padding:0}
+.spt-checks li{padding:2px 0}
+.spt-notes{margin:12px 0 0;padding-left:20px}
+.spt-notes li{margin:0 0 8px}
+.spt-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.spt-grid label{display:block;font-size:.95rem;font-weight:600;margin-bottom:4px}
+.spt-grid input{width:100%}
+.spt-row-h{font-weight:700;margin:16px 0 4px}
+@media(max-width:480px){.spt-grid{gap:10px}}
+.field[hidden]{display:none}
