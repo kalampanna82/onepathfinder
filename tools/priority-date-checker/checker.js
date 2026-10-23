@@ -61,7 +61,21 @@
     return res;
   }
 
-  var api = { check: check, parse: parse, fmt: fmt, COUNTRIES: COUNTRIES, CATEGORIES: CATEGORIES };
+  // bulletin.json holds several bulletins. Use the newest one whose effectiveFrom (12:01 AM Eastern on the 1st of its month) has passed,
+  // so the page switches to a new bulletin on its own, with no deploy needed at midnight. Falls back to the oldest if none has started.
+  function pick(file, now) {
+    if (!file || !file.bulletins) return file;
+    var t = (now instanceof Date ? now : new Date()).getTime(), best = null, first = null;
+    file.bulletins.forEach(function (b) {
+      var at = Date.parse(b.effectiveFrom);
+      if (isNaN(at)) return;
+      if (first === null || at < Date.parse(first.effectiveFrom)) first = b;
+      if (at <= t && (best === null || at > Date.parse(best.effectiveFrom))) best = b;
+    });
+    return best || first || file.bulletins[0];
+  }
+
+  var api = { check: check, pick: pick, parse: parse, fmt: fmt, COUNTRIES: COUNTRIES, CATEGORIES: CATEGORIES };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.PDCheck = api;
 
@@ -79,6 +93,7 @@
     form.category.value = 'F4'; form.country.value = 'all';
 
     fetch('bulletin.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('bad'); return r.json(); }).then(function (d) {
+      d = pick(d, new Date());
       data = d;
       meta.innerHTML = 'Based on the <a href="' + esc(d.source) + '" rel="noopener">' + esc(d.bulletinMonth) + ' Visa Bulletin</a> (published ' + esc(fmt(parse(d.published))) + ').';
     }).catch(function () {

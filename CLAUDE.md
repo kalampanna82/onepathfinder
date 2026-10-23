@@ -21,7 +21,7 @@ Plain static HTML, one shared `styles.css`, one shared `script.js`, small per-to
 - Blog post: copy an existing post to `blog/<slug>/index.html`; set title, description, canonical; add a `.post` entry to `blog/index.html` and the URL to `sitemap.xml`.
 - Tool: build `tools/<slug>/index.html` with the same header/footer and `class="page"`; add a `.tool` card to `tools/index.html` (and `immigration/index.html` if immigration); add to `sitemap.xml`. Keep a visible "not legal advice" note.
 - Page: copy `tax/index.html`, update title, description, canonical, og tags; add nav link if needed and a sitemap entry.
-- Monthly Visa Bulletin: update `tools/priority-date-checker/bulletin.json` and the data in `tools/visa-bulletin-movement/movement.js`.
+- Monthly Visa Bulletin: add the new month to `tools/priority-date-checker/bulletin.json` (keep the previous month; each bulletin has `effectiveFrom` = 12:01 AM Eastern on the 1st of its month, and the page switches by itself) and to the data in `tools/visa-bulletin-movement/movement.js`. A scheduled task does this and opens a PR.
 
 ## Live tools
 CSPA age calculator, N-400 eligibility, I-864 sponsor income, USCIS fee calculator, green card re-entry date, priority date checker, Visa Bulletin movement.
@@ -49,6 +49,6 @@ Multilingual versions: Spanish, Hindi, Urdu, Bangla, Arabic, Filipino/Tagalog (A
 
 ## Decisions and open items
 - 2026-10-22: Added Visa Bulletin movement tool (Oct to Nov 2026) at /tools/visa-bulletin-movement/ (PR #13). It was briefly added to the PentoGIS repo by mistake and removed.
-- Open: `tools/priority-date-checker/bulletin.json` still holds the October 2026 bulletin; update to November.
+- 2026-10-22: Priority date checker now holds October and November bulletins and switches to November at 12:01 AM Eastern on Nov 1, 2026. Merge before then.
 - Open: choose a path-based logo concept; then update the logo files and `brand/`.
 - Open: multilingual rollout plan and URL structure (for example /es/).
