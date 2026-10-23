@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Substantial Presence Test Calculator: Resident or Nonresident for Tax? | One Path Finder</title>
+  <meta name="description" content="Count your days in the U.S. to see whether you are a tax resident or nonresident alien under the IRS substantial presence test. Covers F-1, J-1, H-1B and other visas. Free tool. Not tax or legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/substantial-presence-test/">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="Substantial Presence Test Calculator: Resident or Nonresident for Tax? | One Path Finder">
+  <meta property="og:description" content="Count your days in the U.S. to see whether you are a tax resident or nonresident alien under the IRS substantial presence test. Covers F-1, J-1, H-1B and other visas. Free tool. Not tax or legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/substantial-presence-test/">
+  <meta property="og:image" content="https://onepathfinder.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://onepathfinder.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/tools/substantial-presence-test/spt.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <!-- site-notice: remove this block from every page when the tools are verified -->
+  <div class="site-notice" role="note"><strong>Site under development.</strong> We are still verifying the information and calculations in our tools. Please do not rely on this site for decisions yet.</div>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="273" height="56"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>Substantial presence test calculator</h1>
+    <p class="lead">Are you a tax resident or a nonresident alien? Enter the days you were in the U.S. in the last three years. We apply the IRS substantial presence test, including the rules that let F-1, J-1, M-1 and Q students, teachers and trainees leave out their exempt days.</p>
+    <div class="callout"><p><strong>An estimate, not tax advice.</strong> This covers the substantial presence test only. Your tax status can also depend on a green card, a tax treaty, your first and last year in the U.S. and other rules. Confirm with a qualified tax professional or the IRS before you file. This is general information, not legal or tax advice.</p></div>
+
+    <form id="spt-form" class="calc" novalidate>
+      <div class="field">
+        <label for="spt-year">Tax year</label>
+        <p class="hint">The calendar year you are filing for. Most people file for last year.</p>
+        <select id="spt-year" name="year"></select>
+      </div>
+      <div class="field">
+        <label for="spt-status">Your status in that year</label>
+        <select id="spt-status" name="status">
+          <option value="student">Student: F-1 (including OPT), J-1, M-1 or Q visa</option>
+          <option value="teacher">Teacher, trainee or researcher: J-1 or Q visa (not a student)</option>
+          <option value="other">Something else: H-1B, L-1, O-1, green card applicants, visitors and so on</option>
+        </select>
+      </div>
+      <div class="field" id="spt-f-student">
+        <label for="spt-sy">Calendar years you have been exempt, including this tax year</label>
+        <p class="hint">Count any year in which you had F, J, M or Q student status for even one day, as a student, teacher or trainee. Example: you arrived in August 2022 and file for 2025, so 2022, 2023, 2024 and 2025 is <strong>4</strong>. After more than 5 years you can only keep excluding days if you show you do not intend to stay permanently.</p>
+        <input type="number" id="spt-sy" min="1" max="20" step="1" inputmode="numeric" value="1">
+      </div>
+      <div class="field" id="spt-f-teacher" hidden>
+        <label for="spt-p6">Of the 6 years before this tax year, in how many were you exempt for any part of the year?</label>
+        <p class="hint">As a teacher, trainee or student. Exempt in 2 or more: your days count, with one narrow exception below.</p>
+        <input type="number" id="spt-p6" min="0" max="6" step="1" inputmode="numeric" value="0">
+        <label class="check"><input type="checkbox" id="spt-fp"> A foreign employer paid all my pay this year and in every prior year I was a teacher or trainee in the U.S., and I was a teacher or trainee here in at least one of the 6 prior years.</label>
+      </div>
+
+      <p class="spt-row-h">Days you were in the U.S.</p>
+      <p class="hint">Count every day you were physically in the U.S. for any part of the day, including arrival and departure days. Use your passport stamps, I-94 travel history and boarding passes.</p>
+      <div class="spt-grid">
+        <div><label for="spt-d0">Days in <span class="spt-y0">2025</span></label><input type="number" id="spt-d0" min="0" max="366" step="1" inputmode="numeric"></div>
+        <div><label for="spt-x0">Not counted in <span class="spt-y0">2025</span> <span class="small">(optional)</span></label><input type="number" id="spt-x0" min="0" max="366" step="1" inputmode="numeric" placeholder="0"></div>
+        <div><label for="spt-d1">Days in <span class="spt-y1">2024</span></label><input type="number" id="spt-d1" min="0" max="366" step="1" inputmode="numeric"></div>
+        <div><label for="spt-x1">Not counted in <span class="spt-y1">2024</span> <span class="small">(optional)</span></label><input type="number" id="spt-x1" min="0" max="366" step="1" inputmode="numeric" placeholder="0"></div>
+        <div><label for="spt-d2">Days in <span class="spt-y2">2023</span></label><input type="number" id="spt-d2" min="0" max="366" step="1" inputmode="numeric"></div>
+        <div><label for="spt-x2">Not counted in <span class="spt-y2">2023</span> <span class="small">(optional)</span></label><input type="number" id="spt-x2" min="0" max="366" step="1" inputmode="numeric" placeholder="0"></div>
+      </div>
+      <p class="hint"><strong>Not counted</strong> means days that do not count toward the test. For the earlier two years, include the days you were an exempt individual (for example an F-1 student in your first years). For the tax year itself we leave out all your days automatically if you are exempt, so only enter other days that do not count: commuting from Canada or Mexico, less than 24 hours in transit between two places outside the U.S., crew of a foreign vessel, or a medical condition that kept you from leaving.</p>
+      <div class="actions">
+        <button type="submit" class="btn primary">Check my status</button>
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="spt-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>How the test works</h2>
+    <ul>
+      <li><strong>Two parts, both required.</strong> You must be in the U.S. at least 31 days in the tax year, <em>and</em> your weighted total must be at least 183: all your days this year, plus one third of your days last year, plus one sixth of your days the year before.</li>
+      <li><strong>Example from the IRS.</strong> 120 days in each of 2023, 2024 and 2025 gives 120 + 40 + 20 = 180 for 2025. That is under 183, so no resident status from this test.</li>
+      <li><strong>Exempt individual days do not count.</strong> This covers students (F, J, M, Q visas), teachers and trainees (J, Q), and some others. Students are exempt for up to 5 calendar years. Teachers and trainees lose the exemption if they were exempt in 2 of the 6 years before.</li>
+      <li><strong>Other days that do not count.</strong> Commuting from Canada or Mexico, transit of under 24 hours between two places outside the U.S., foreign vessel crew, and a medical condition that prevented you leaving.</li>
+      <li><strong>Closer connection.</strong> If you pass the test but were in the U.S. fewer than 183 days this year, you may still be treated as a nonresident if you keep a tax home and closer connection to a foreign country (Form 8840).</li>
+      <li><strong>Which return.</strong> A resident alien generally files Form 1040. A nonresident alien generally files Form 1040-NR. Exempt individuals file Form 8843 with their return, or alone if they have no return to file.</li>
+      <li><strong>H-1B and OPT.</strong> H-1B workers have no exempt status, so every day counts. F-1 students on OPT are still students, so the 5-year limit applies to them.</li>
+    </ul>
+    <p class="small"><strong>Privacy:</strong> Everything is worked out in your browser. The numbers you enter are not sent to us or stored.</p>
+
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm or a tax preparer and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/opt-date-planner/">OPT and STEM OPT date planner</a></li>
+      <li><a href="/tools/sevis-fee-calculator/">How much is the SEVIS fee?</a></li>
+      <li><a href="/tools/uscis-fee-calculator/">USCIS filing fee calculator</a></li>
+    </ul>
+
+    <div class="sources"><h2>Official sources</h2><ul>
+      <li><a href="https://www.irs.gov/individuals/international-taxpayers/substantial-presence-test" rel="noopener">IRS: Substantial presence test</a></li>
+      <li><a href="https://www.irs.gov/individuals/international-taxpayers/exempt-individuals-teachers-and-trainees" rel="noopener">IRS: Exempt individuals, teachers and trainees</a></li>
+      <li><a href="https://www.irs.gov/pub/irs-pdf/f8843.pdf" rel="noopener">IRS Form 8843 and instructions</a></li>
+      <li><a href="https://www.irs.gov/publications/p519" rel="noopener">IRS Publication 519: U.S. Tax Guide for Aliens</a></li>
+    </ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/substantial-presence-test/spt.js"></script>
+</body>
+</html>
