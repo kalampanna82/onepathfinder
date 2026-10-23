@@ -239,3 +239,30 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
 .choices.stack{margin-top:6px}
 fieldset.field{border:0;padding:0;margin:0 0 24px;min-width:0}
 fieldset.field legend{padding:0;font-weight:600;margin-bottom:4px}
+
+/* Fees by form */
+.fee-search input{font:inherit;color:var(--ink);background:#fff;width:100%;max-width:420px;min-height:48px;padding:10px 12px;border:1px solid #8a8f98;border-radius:6px}
+.fee-search input:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+.fee-jump{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 8px;font-weight:600}
+.fee-jump a{text-decoration:underline;text-underline-offset:4px;color:var(--navy)}
+.fee-cat{margin-top:32px}
+.fee-cat h2{margin-bottom:12px}
+.fee-table{width:100%;border-collapse:collapse}
+.fee-table th,.fee-table td{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border:0}
+.fee-table tbody tr{border-top:1px solid var(--line)}
+.fee-table thead th{font-size:.92rem;color:var(--muted);font-weight:600;border-bottom:2px solid var(--ink)}
+.fee-table tbody th{font-weight:600;width:36%}
+.fee-table td{white-space:nowrap}
+.fee-table td:last-child{white-space:normal;color:var(--muted);font-size:.95rem}
+.fee-form{color:var(--teal);margin-right:4px}
+.fee-new{display:inline-block;margin-left:6px;padding:1px 8px;border:1px solid var(--teal);border-radius:999px;font-size:.78rem;font-weight:600;color:var(--teal);white-space:nowrap}
+@media(max-width:640px){
+  .fee-table thead{position:absolute;left:-9999px}
+  .fee-table,.fee-table tbody,.fee-table tr,.fee-table th,.fee-table td{display:block;width:100%}
+  .fee-table tbody th{width:100%;padding:14px 0 4px}
+  .fee-table td{border-top:0;padding:2px 0;white-space:normal}
+  .fee-table td::before{content:attr(data-l) ": ";font-weight:600;color:var(--ink)}
+  .fee-table td:last-child:empty{display:none}
+  .fee-table td:last-child:not(:empty){padding-bottom:10px}
+}
+.fee-table tr[hidden],.fee-cat[hidden]{display:none}
