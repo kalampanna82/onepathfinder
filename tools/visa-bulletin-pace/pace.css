@@ -18,13 +18,39 @@
 .pace-grid{stroke:var(--line);stroke-width:1}
 .pace-band{stroke:#8a8f98;stroke-width:1;stroke-dasharray:2 4}
 .pace-axis{font-size:12px;fill:var(--muted);font-family:var(--sans)}
-.pace-line{stroke:var(--navy);stroke-width:2.2;fill:none}
-.pace-gap{stroke-dasharray:5 4;stroke:#6b7280}
+.pace-seg{stroke-width:3.2;stroke-linecap:round;fill:none}
+.pace-s-up{stroke:#17744a}
+.pace-s-down{stroke:#b3261e}
+.pace-s-same{stroke:#1f5fae}
+.pace-seg.pace-gap{stroke-dasharray:5 4;opacity:.7}
+.pace-yband{fill:var(--line);opacity:.35}
+.pace-ann{stroke:#8a8f98;stroke-width:1}
+.pace-yl{font-size:12px;fill:var(--muted);font-family:var(--sans)}
+.pace-ym{font-size:15px;font-weight:700;font-family:var(--sans)}
+.pace-t-up{fill:#17744a}
+.pace-t-down{fill:#b3261e}
+.pace-t-same{fill:#1f5fae}
+.pace-t-na{fill:var(--muted)}
+.pace-ref{stroke:#8a8f98;stroke-width:1.6;stroke-dasharray:7 5}
+.pace-anchor{fill:#fff;stroke:var(--navy);stroke-width:2.5}
+.pace-av{font-size:12px;font-weight:700;fill:var(--navy);font-family:var(--sans);paint-order:stroke;stroke:#fff;stroke-width:4px}
+.pace-h3{font-size:1.15rem;margin:22px 0 8px}
+.pace-story{list-style:none;margin:0 0 8px;padding:0}
+.pace-story li{padding:10px 0;border-top:1px solid var(--line);line-height:1.8}
+.pace-story li:last-child{border-bottom:1px solid var(--line)}
+.pace-when{font-weight:600}
+.pace-legend{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;margin:0 0 12px}
+.pace-li{white-space:nowrap}
+.pace-lg{display:inline-block;width:22px;height:0;border-top:4px solid;vertical-align:middle;margin-right:6px}
+.pace-lg-up{border-color:#17744a}
+.pace-lg-down{border-color:#b3261e}
+.pace-lg-same{border-color:#1f5fae}
+.pace-lg-ref{border-top:2px dashed #8a8f98}
+.pace-lg-pd{border-top:2px dashed var(--teal)}
 .pace-dot{fill:var(--navy)}
 .pace-dot-C{fill:#17744a}
 .pace-dot-U{fill:#b3261e}
 .pace-pd{stroke:var(--teal);stroke-width:1.6;stroke-dasharray:6 4}
-.pace-pdt{font-size:12px;fill:var(--teal);font-weight:700;font-family:var(--sans);paint-order:stroke;stroke:#fff;stroke-width:4px}
 .pace-details{margin:12px 0}
 .pace-details summary{cursor:pointer;font-weight:600}
-@media(max-width:560px){.pace-axis,.pace-pdt{font-size:17px}}
+@media(max-width:560px){.pace-axis,.pace-av,.pace-yl{font-size:13px}.pace-ym{font-size:13px}}
