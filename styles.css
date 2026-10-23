@@ -44,6 +44,7 @@ p{margin:0 0 1em}
 .btn{display:inline-block;padding:13px 22px;border-radius:6px;font-weight:700;border:2px solid var(--navy);transition:background .15s,color .15s}
 .primary{background:var(--navy);color:#fff}
 .primary:hover{background:var(--navy-dark);border-color:var(--navy-dark)}
+.page a.primary{color:#fff;text-decoration:none}
 .secondary{background:#fff;color:var(--navy)}
 .secondary:hover{background:var(--paper)}
 
