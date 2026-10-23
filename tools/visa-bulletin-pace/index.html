@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How Fast Is My Visa Bulletin Category Moving? | One Path Finder</title>
+  <meta name="description" content="See how the Final Action Date for your green card category and country has moved over the past two years, and where your priority date stands today. Past movement only, not a prediction. Not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/visa-bulletin-pace/">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="How Fast Is My Visa Bulletin Category Moving? | One Path Finder">
+  <meta property="og:description" content="See how the Final Action Date for your green card category and country has moved over the past two years, and where your priority date stands today. Past movement only, not a prediction. Not legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/visa-bulletin-pace/">
+  <meta property="og:image" content="https://onepathfinder.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://onepathfinder.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/tools/visa-bulletin-pace/pace.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="273" height="56"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>How fast is my category moving?</h1>
+    <p class="lead">Pick your green card category and country to see how its Final Action Date has moved over the past two years. Add your priority date to see where you stand today.</p>
+    <div class="callout"><p><strong>Past movement only. Not a prediction, and not legal advice.</strong> Cutoff dates can move forward, stand still, or move backward without notice, and no one can say when a date will become current. Confirm your category, country and priority date with a licensed immigration attorney or DOJ-accredited representative.</p></div>
+
+    <form id="pace-form" class="calc" novalidate>
+      <div class="field">
+        <label for="pace-kind">Type of green card</label>
+        <select id="pace-kind" name="kind">
+          <option value="eb">Employment-based (EB)</option>
+          <option value="fam">Family-sponsored (F)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="pace-cat">Category</label>
+        <select id="pace-cat" name="cat"></select>
+      </div>
+      <div class="field">
+        <label for="pace-country">Country you are chargeable to</label>
+        <p class="hint">This is usually your country of birth. Countries other than China, India, Mexico and the Philippines use Rest of World.</p>
+        <select id="pace-country" name="country"></select>
+      </div>
+      <div class="field">
+        <label for="pace-pd">Your priority date <span class="small">(optional)</span></label>
+        <p class="hint">Not sure where to find it? Read <a href="/blog/how-to-find-your-priority-date/">how to find your priority date</a>.</p>
+        <input type="date" id="pace-pd" name="pd">
+      </div>
+      <div class="actions">
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="pace-result" class="result" tabindex="-1" aria-live="polite"><p>Loading the bulletin history&hellip;</p></div>
+    <p class="small" id="pace-meta"></p>
+
+    <h2>How to read this</h2>
+    <ul>
+      <li><strong>Final Action Date.</strong> A visa can be approved when your priority date is earlier than this date. <strong>Current</strong> (C) means everyone in the category qualifies. <strong>Unavailable</strong> (U) means no visas that month.</li>
+      <li><strong>Green, red, blue.</strong> Green means the date moved forward, red means it moved backward (retrogressed), and blue means it stayed the same.</li>
+      <li><strong>The chart.</strong> Each dot is one monthly bulletin. Dashed lines cross months we do not have. The month-by-month numbers are under the chart.</li>
+      <li><strong>Why movement is not a forecast.</strong> A fast year says little about the next one. Yearly visa limits, demand and State Department decisions all change, and dates often reset in October, when the government&rsquo;s fiscal year starts.</li>
+      <li>This uses <strong>Final Action Dates</strong> only. The Dates for Filing chart and the chart USCIS accepts each month are different. Use the <a href="/tools/priority-date-checker/">priority date checker</a> for those.</li>
+    </ul>
+    <p class="small"><strong>Privacy:</strong> Everything is worked out in your browser. What you choose and your priority date are not sent to us or stored.</p>
+
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/priority-date-checker/">Is my priority date current?</a></li>
+      <li><a href="/tools/visa-bulletin-movement/">Visa Bulletin movement: what changed this month</a></li>
+      <li><a href="/blog/what-is-visa-bulletin-movement/">What is Visa Bulletin movement? What it means for your case</a></li>
+    </ul>
+
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+
+    <div class="sources"><h2>Official sources</h2><ul>
+      <li><a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">U.S. Department of State: Visa Bulletin</a></li>
+    </ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/visa-bulletin-pace/pace.js"></script>
+</body>
+</html>

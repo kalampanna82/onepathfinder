@@ -1,0 +1,30 @@
+/* Visa Bulletin pace. Status colors match the movement tool: green forward, red backward, blue no change. */
+.pace-h{font-size:1.5rem;margin:0 0 8px}
+.pace-now{margin:0 0 14px;font-size:1.1rem}
+.pace-now strong{font-family:var(--serif);font-size:1.9rem}
+.pace-stand{margin:0 0 16px;padding:14px 18px;border-left:6px solid}
+.pace-current{background:#e6f6ed;border-left-color:#17744a}
+.pace-waiting,.pace-unavailable{background:#fdecea;border-left-color:#b3261e}
+.pace-rows{margin:0 0 16px}
+.pace-row{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.pace-row:last-child{border-bottom:1px solid var(--line)}
+.pace-lab{font-weight:600}
+.pace-dates{grid-column:1 / -1}
+.pace-chip{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:.95rem;color:#fff;white-space:nowrap}
+.pace-up{background:#17744a}
+.pace-down{background:#b3261e}
+.pace-same{background:#1f5fae}
+.pace-svg{display:block;max-width:100%;height:auto;margin:16px 0 4px}
+.pace-grid{stroke:var(--line);stroke-width:1}
+.pace-band{stroke:#8a8f98;stroke-width:1;stroke-dasharray:2 4}
+.pace-axis{font-size:12px;fill:var(--muted);font-family:var(--sans)}
+.pace-line{stroke:var(--navy);stroke-width:2.2;fill:none}
+.pace-gap{stroke-dasharray:5 4;stroke:#6b7280}
+.pace-dot{fill:var(--navy)}
+.pace-dot-C{fill:#17744a}
+.pace-dot-U{fill:#b3261e}
+.pace-pd{stroke:var(--teal);stroke-width:1.6;stroke-dasharray:6 4}
+.pace-pdt{font-size:12px;fill:var(--teal);font-weight:700;font-family:var(--sans);paint-order:stroke;stroke:#fff;stroke-width:4px}
+.pace-details{margin:12px 0}
+.pace-details summary{cursor:pointer;font-weight:600}
+@media(max-width:560px){.pace-axis,.pace-pdt{font-size:17px}}

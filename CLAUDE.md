@@ -21,10 +21,10 @@ Plain static HTML, one shared `styles.css`, one shared `script.js`, small per-to
 - Blog post: copy an existing post to `blog/<slug>/index.html`; set title, description, canonical; add a `.post` entry to `blog/index.html` and the URL to `sitemap.xml`.
 - Tool: build `tools/<slug>/index.html` with the same header/footer and `class="page"`; add a `.tool` card to `tools/index.html` (and `immigration/index.html` if immigration); add to `sitemap.xml`. Keep a visible "not legal advice" note.
 - Page: copy `tax/index.html`, update title, description, canonical, og tags; add nav link if needed and a sitemap entry.
-- Monthly Visa Bulletin: add the new month to `tools/priority-date-checker/bulletin.json` (keep the previous month; each bulletin has `effectiveFrom` = 12:01 AM Eastern on the 1st of its month, and the page switches by itself) and to the data in `tools/visa-bulletin-movement/movement.js`. A scheduled task does this and opens a PR.
+- Monthly Visa Bulletin: add the new month to `tools/priority-date-checker/bulletin.json` (keep the previous month; each bulletin has `effectiveFrom` = 12:01 AM Eastern on the 1st of its month, and the page switches by itself) to the data in `tools/visa-bulletin-movement/movement.js`, and append the month's Final Action Dates to `tools/visa-bulletin-pace/history.json` (6 EB rows and 5 family rows, 5 columns each). A scheduled task does this and opens a PR.
 
 ## Live tools
-CSPA age calculator, N-400 eligibility, I-864 sponsor income, USCIS fee calculator, green card re-entry date, priority date checker, Visa Bulletin movement, SEVIS fee calculator.
+CSPA age calculator, N-400 eligibility, I-864 sponsor income, USCIS fee calculator, green card re-entry date, priority date checker, Visa Bulletin movement, SEVIS fee calculator, Visa Bulletin pace.
 I-130 petition tool is ON HOLD until the owner has more research and lawyer guidance. Do not build or publish it.
 
 ## Brand
@@ -53,5 +53,6 @@ Multilingual versions: Spanish, Hindi, Urdu, Bangla, Arabic, Filipino/Tagalog (A
 - 2026-10-22: Added SEVIS I-901 fee calculator at /tools/sevis-fee-calculator/. Amounts are in `CATS` in `sevis.js` (F/M $350, J-1 $220, au pair/camp/summer work $35, G-programs and F-2/M-2/J-2 $0), last checked against ICE in Oct 2026. Re-check on ice.gov/sevis/i901 when ICE announces a change.
 - 2026-10-22: USCIS fee calculator (/tools/uscis-fee-calculator/) now also lists fees by category (family, citizenship, work, asylum/parole/TPS) with search; about 30 forms. All fees live in `FORMS` in `fees.js` (one source; the page renders from it). Fees as of Oct 22, 2026 incl. the Oct 16, 2026 changes (annual asylum $105, first asylum/parole/TPS work permit $570, parole $1,050, TPS $520; `isNew: true`). Re-check against G-1055 when USCIS announces a change, and clear `isNew` badges after a few months.
 - 2026-10-22: Added blog post "What is the SEVIS fee? Why do you have to pay it?" at /blog/what-is-the-sevis-fee/, linked from the SEVIS fee tool. Facts from ICE I-901 page and FAQ; re-check if ICE changes fee or rules.
+- 2026-10-22: Added Visa Bulletin pace tool at /tools/visa-bulletin-pace/ (how a category's Final Action Date moved over time, with a chart and optional priority date). Data is `history.json`, Oct 2024 to Nov 2026 (26 months). 17 months were read twice from the official PDFs and agreed; Oct and Nov 2026 come from the PDFs you supplied; 7 months (Nov 2024, Jan 2025, Sep 2025, Dec 2025, Feb 2026, Apr 2026, Jun 2026) could not be fetched from travel.state.gov, so their employment rows come from prachub.com (`src: mirror`) and family rows are null. Backfill those from the official bulletins when possible. Past movement only: no forecast.
 - Open: choose a path-based logo concept; then update the logo files and `brand/`.
 - Open: multilingual rollout plan and URL structure (for example /es/).
