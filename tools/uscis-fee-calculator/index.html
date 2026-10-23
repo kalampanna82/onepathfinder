@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>USCIS Filing Fee Calculator | One Path Finder</title>
-  <meta name="description" content="Add up government filing fees for common USCIS forms such as I-130, I-485, I-765, N-400 and I-90. Confirm fees on uscis.gov before filing.">
+  <title>USCIS Filing Fee Calculator and Fees by Form | One Path Finder</title>
+  <meta name="description" content="See current USCIS filing fees by form and add them up: family and green card, citizenship, work visas, asylum and TPS. Updated for October 16, 2026. Not legal advice.">
   <link rel="canonical" href="https://onepathfinder.com/tools/uscis-fee-calculator/">
   <meta name="theme-color" content="#0b0f14">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="One Path Finder">
-  <meta property="og:title" content="USCIS Filing Fee Calculator | One Path Finder">
-  <meta property="og:description" content="Add up government filing fees for common USCIS forms such as I-130, I-485, I-765, N-400 and I-90. Confirm fees on uscis.gov before filing.">
+  <meta property="og:title" content="USCIS Filing Fee Calculator and Fees by Form | One Path Finder">
+  <meta property="og:description" content="See current USCIS filing fees by form and add them up: family and green card, citizenship, work visas, asylum and TPS. Updated for October 16, 2026. Not legal advice.">
   <meta property="og:url" content="https://onepathfinder.com/tools/uscis-fee-calculator/">
   <meta property="og:image" content="https://onepathfinder.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -39,31 +39,47 @@
   <main id="main" class="page">
     <a class="back" href="/tools/">&larr; All tools</a>
     <h1>USCIS filing fee calculator</h1>
-    <p class="lead">Add up the government filing fees for common immigration forms. Choose the forms you plan to file.</p>
-    <div class="callout"><p><strong>Confirm before you pay.</strong> Fees change, and a wrong fee can cause USCIS to reject your filing. These amounts were last checked in October 2026. Confirm the exact fee on the <a href="https://www.uscis.gov/feecalculator" rel="noopener">official USCIS fee calculator</a> before you file. This is general information, not legal advice. It covers government fees only, not attorney or service fees.</p></div>
+    <p class="lead">See what the government charges for the most common immigration forms, grouped by category, and add up the forms you plan to file.</p>
+    <div class="callout"><p><strong>Confirm before you pay.</strong> Fees change, and a wrong fee can cause USCIS to reject your filing. These amounts were last checked on October 22, 2026, and include the changes for requests postmarked on or after October 16, 2026. Confirm the exact fee on the <a href="https://www.uscis.gov/g-1055" rel="noopener">official USCIS fee schedule (G-1055)</a> before you file. This is general information, not legal advice. It covers government fees only, not attorney or service fees.</p></div>
+
+    <div class="field fee-search">
+      <label for="fee-q">Search forms</label>
+      <input id="fee-q" type="search" placeholder="For example I-485, green card, citizenship" autocomplete="off">
+      <p class="small" id="fee-count" aria-live="polite"></p>
+    </div>
+    <p class="fee-jump"><a href="#family">Family and green card</a> <a href="#citizenship">Citizenship</a> <a href="#work">Work and temporary stay</a> <a href="#humanitarian">Asylum, parole and TPS</a></p>
 
     <form id="fee-form" class="calc" novalidate>
-      <p class="form-tip">Check each form you plan to file. Then choose online or paper.</p>
+      <p class="form-tip">Every fee is listed below. To add up a total, check each form you plan to file, then choose online or paper.</p>
       <div id="fee-forms"></div>
+      <noscript><p>This page needs JavaScript to list the fees. You can find them on the <a href="https://www.uscis.gov/g-1055" rel="noopener">USCIS fee schedule (G-1055)</a>.</p></noscript>
     </form>
 
+    <div id="fee-bar" class="fee-bar" hidden></div>
     <div id="fee-result" class="result" aria-live="polite"></div>
 
-    <h2>What is included</h2>
-    <p>Biometric services are included in these fees. This tool does not cover every form, every fee category, fee waivers (except the reduced N-400 fee shown), or fees for asylum, parole, temporary protected status and similar filings. Some applicants pay a different fee or $0, such as certain military applicants. Check the official fee schedule for your situation.</p>
-    <p>USCIS has proposed raising the N-400 fee. A proposal is not final, so this tool uses the current fee. Check the official sources for updates before you file.</p>
+<h2>What is included</h2>
+    <p>Biometric services are included in most of these fees. This page does not cover every form or fee category. Some applicants pay a different fee or $0, such as certain military applicants, and some applicants can ask USCIS to waive a fee with Form I-912. Check the official fee schedule for your situation. Online filing is available for some forms and costs $50 less for many of them. A fee shown as paper only means no online fee is listed here.</p>
+    <h2>Other costs to expect</h2>
+    <ul>
+      <li><strong>Employer add-on fees.</strong> Most I-129 and I-140 petitions also carry an Asylum Program Fee ($600, $300 for small employers, none for nonprofits). Some H-1B and L-1 petitions have further fees. These are in addition to the amounts above.</li>
+      <li><strong>Other agencies.</strong> The SEVIS fee, visa application fees and medical exam costs are paid separately. See the <a href="/tools/sevis-fee-calculator/">SEVIS fee calculator</a>.</li>
+      <li><strong>Mailing date counts.</strong> For mailed filings, the postmark date decides which fee applies, not the date USCIS receives the package.</li>
+    </ul>
+<p>USCIS has proposed raising the N-400 fee. A proposal is not final, so this tool uses the current fee. Check the official sources for updates before you file.</p>
     <p class="small"><strong>Privacy:</strong> Everything is calculated in your browser. What you enter is not sent to us or stored.</p>
     <h2>Need help organizing your documents?</h2>
     <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
     <h2>More tools</h2>
     <ul>
+      <li><a href="/tools/sevis-fee-calculator/">SEVIS fee calculator</a></li>
       <li><a href="/tools/cspa-age-calculator/">CSPA age calculator</a></li>
       <li><a href="/tools/priority-date-checker/">Is my priority date current?</a></li>
       <li><a href="/tools/n400-eligibility-calculator/">N-400 eligibility calculator</a></li>
       <li><a href="/tools/i864-income-calculator/">I-864 sponsor income calculator</a></li>
       <li><a href="/tools/green-card-reentry-calculator/">Green card re-entry date calculator</a></li>
     </ul>
-<div class="sources"><h2>Official sources</h2><ul><li><a href="https://www.uscis.gov/feecalculator" rel="noopener">USCIS: Fee calculator</a></li><li><a href="https://www.uscis.gov/forms/filing-fees" rel="noopener">USCIS: Filing fees</a></li><li><a href="https://www.uscis.gov/g-1055" rel="noopener">USCIS: Form G-1055, Fee Schedule</a></li></ul></div>
+<div class="sources"><h2>Official sources</h2><ul><li><a href="https://www.uscis.gov/feecalculator" rel="noopener">USCIS: Fee calculator</a></li><li><a href="https://www.uscis.gov/forms/filing-fees" rel="noopener">USCIS: Filing fees</a></li><li><a href="https://www.uscis.gov/g-1055" rel="noopener">USCIS: Form G-1055, Fee Schedule</a></li><li><a href="https://www.uscis.gov/newsroom/alerts/uscis-announces-fy-2027-inflation-increase-for-certain-immigration-related-fees" rel="noopener">USCIS: FY 2027 inflation increase for certain fees</a></li></ul></div>
   </main>
 
   <footer>

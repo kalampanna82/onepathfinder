@@ -239,3 +239,20 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
 .choices.stack{margin-top:6px}
 fieldset.field{border:0;padding:0;margin:0 0 24px;min-width:0}
 fieldset.field legend{padding:0;font-weight:600;margin-bottom:4px}
+
+/* Fee list: search, categories, total bar */
+.fee-search input{font:inherit;color:var(--ink);background:#fff;width:100%;max-width:420px;min-height:48px;padding:10px 12px;border:1px solid #8a8f98;border-radius:6px}
+.fee-search input:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+.fee-jump{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 8px;font-weight:600}
+.fee-jump a{text-decoration:underline;text-underline-offset:4px;color:var(--navy)}
+.fee-cat{margin-top:32px}
+.fee-cat h2{margin-bottom:12px}
+.fee-amt{margin:4px 0 0 30px;font-weight:600}
+.fee-head{margin:0}
+.fee-note{margin:2px 0 0 30px}
+.fee-new{display:inline-block;margin-left:6px;padding:1px 8px;border:1px solid var(--teal);border-radius:999px;font-size:.78rem;font-weight:600;color:var(--teal);white-space:nowrap;vertical-align:middle}
+.fee-form[hidden],.fee-cat[hidden]{display:none}
+.fee-bar{position:sticky;bottom:0;z-index:5;display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;padding:10px 16px;margin:16px 0 0;border-radius:6px 6px 0 0}
+.fee-bar[hidden]{display:none}
+.fee-bar a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.fee-bar a:focus-visible{outline-color:#fff}
