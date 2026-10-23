@@ -35,6 +35,13 @@ I-130 petition tool is ON HOLD until the owner has more research and lawyer guid
 ## Planned
 Multilingual versions, first wave of 5: Spanish, Bangla, Hindi, Urdu, Arabic (Arabic and Urdu need RTL). Separate URL per language (/es/, /bn/, /hi/, /ur/, /ar/), each reviewed by a native speaker before launch. Possible second wave: Filipino/Tagalog, Chinese, Portuguese, Haitian Creole, Korean. Not started.
 
+Owner's claude.ai prototypes (Oct 2026) for tool ideas. Use them for the logic, but rebuild in site style: shared header/footer, `styles.css` variables (they use an old blue palette) and the `site-notice`. Re-check every number against official sources before publishing.
+- Filing Status Finder (tax): a question tree that suggests Single / HoH / MFJ / MFS / QSS (based on IRS Pub 501), with 2025 standard deductions ($15,750 / $23,625 / $31,500). Not built yet.
+- NJ Resident or Nonresident Tracker (tax): the domicile rule (NJ domicile but a permanent home only outside NJ and 30 days or less in NJ means nonresident; a permanent home in NJ all year plus more than 183 days means statutory resident); a move during the year means part-year (NJ-1040 plus NJ-1040NR). Also checks whether filing is required ($10,000 single/MFS, $20,000 MFJ/HoH/QSS). Not built yet.
+- The N-400 and I-864 prototypes match tools that are already live. The I-864 2026 poverty guidelines match `i864.js`.
+- I-130 Petition Assistant: a step-by-step questionnaire that fills the official I-130 PDF with pdf-lib. ON HOLD (see Live tools).
+- Every prototype has a "Request a Consultation" lead form (name, email, phone) that saves to the artifact database. Do NOT copy it to the site: it breaks the no-PII rule. Lead capture on the site needs the owner's decision first (where submissions go, privacy policy update).
+
 ## Rules
 - Cite official sources (USCIS, travel.state.gov, IRS) with links. Keep immigration claims accurate.
 - No legal advice and no guaranteed outcomes. Keep the disclaimer on tools and articles.
@@ -64,4 +71,6 @@ Multilingual versions, first wave of 5: Spanish, Bangla, Hindi, Urdu, Arabic (Ar
 - 2026-10-23: Added Substantial presence test calculator at /tools/substantial-presence-test/ (linked from /tax/). Rules from IRS pages (Substantial presence test, reviewed 14 Mar 2026; Teachers and trainees, 16 Apr 2026) and Form 8843 instructions (2025): 31 days this year and current + 1/3 prior + 1/6 year-before >= 183 (compared in integers, 6*c+2*p1+p2 >= 1098); students exempt up to 5 calendar years (more: only if no intent to reside permanently, shown as 'it depends'); teachers/trainees not exempt if exempt in 2 of the 6 prior years, unless 3 or fewer and a foreign employer paid all pay. Covers the substantial presence test only (not the green card test or dual-status years). Prior-year exempt days are entered by the visitor. Re-check when the IRS updates these pages or the form.
 - Open: choose a path-based logo concept; then update the logo files and `brand/`.
 - 2026-10-23: Owner decided multilingual starts with 5 languages (Spanish, Bangla, Hindi, Urdu, Arabic) on separate URLs per language, with native-speaker review. Filipino/Tagalog moved to a possible second wave.
+- 2026-10-23: Recorded the owner's claude.ai prototypes (Filing Status Finder, NJ residency tracker, N-400, I-864, I-130) under Planned. Next tax tool candidates: Filing Status Finder and NJ residency tracker.
+- Open: lead capture / consultation requests (prototypes have one; site has none). Needs owner decision on where submissions go and a privacy policy update.
 - Open: multilingual rollout plan (which pages to translate first, shared `styles.css` RTL rules, hreflang tags, sitemap entries). Nothing built yet.
