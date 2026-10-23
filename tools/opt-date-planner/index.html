@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OPT and STEM OPT Date Planner: Deadlines and Unemployment Days | One Path Finder</title>
+  <meta name="description" content="Enter your program end date to see when to apply for OPT, your start and end dates, your 60-day grace period, the STEM OPT filing window, and your unemployment days. Free tool. Not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/opt-date-planner/">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="OPT and STEM OPT Date Planner: Deadlines and Unemployment Days | One Path Finder">
+  <meta property="og:description" content="Enter your program end date to see when to apply for OPT, your start and end dates, your 60-day grace period, the STEM OPT filing window, and your unemployment days. Free tool. Not legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/opt-date-planner/">
+  <meta property="og:image" content="https://onepathfinder.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://onepathfinder.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/tools/opt-date-planner/planner.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="273" height="56"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>OPT and STEM OPT date planner</h1>
+    <p class="lead">Enter the date your program ends. We lay out the dates that matter for F-1 Optional Practical Training: when you can apply, when your work permit ends, your 60-day grace period, the STEM OPT filing window, and how many unemployment days you have left.</p>
+    <div class="callout"><p><strong>A calendar, not a decision.</strong> Your school&rsquo;s designated school official (DSO) recommends OPT in SEVIS and USCIS decides your actual dates. Rules and your own situation can differ, and a missed deadline can cost you your work authorization. Confirm every date with your DSO. This is general information, not legal advice.</p></div>
+
+    <form id="pl-form" class="calc" novalidate>
+      <div class="field">
+        <label for="pl-end">Program end date</label>
+        <p class="hint">On your I-20, in the program of study section. For a degree, this is the end date shown for your current program. If you finish early, use your new end date once your DSO updates it.</p>
+        <input type="date" id="pl-end" name="end">
+      </div>
+      <div class="field">
+        <label for="pl-start">OPT start date you will request <span class="small">(optional)</span></label>
+        <p class="hint">It can be any day from your program end date up to 60 days after it. If you leave it blank, we assume the day after your program ends.</p>
+        <input type="date" id="pl-start" name="start">
+      </div>
+      <div class="field">
+        <label for="pl-stem">Show STEM OPT dates?</label>
+        <p class="hint">The 24-month STEM extension is only for degrees on the <a href="https://www.ice.gov/doclib/sevis/pdf/stem-list.pdf" rel="noopener">STEM Designated Degree Program List</a>, with an employer enrolled in E-Verify.</p>
+        <select id="pl-stem" name="stem"><option value="yes">Yes, show them</option><option value="no">No</option></select>
+      </div>
+      <div class="field">
+        <label for="pl-used">Unemployment days used so far <span class="small">(optional)</span></label>
+        <p class="hint">Days on OPT with no qualifying work. Leave it at 0 if you have not started.</p>
+        <input type="number" id="pl-used" name="used" min="0" max="365" step="1" inputmode="numeric" value="0">
+      </div>
+      <div class="field">
+        <label for="pl-asof">Today <span class="small">(change it to look at another day)</span></label>
+        <input type="date" id="pl-asof" name="asof">
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn primary">Show my dates</button>
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="pl-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>The rules behind these dates</h2>
+    <ul>
+      <li><strong>When you can apply.</strong> USCIS can receive your OPT application no earlier than 90 days before your program end date and no later than 60 days after it. It also has to arrive within 30 days after your DSO recommends OPT in SEVIS.</li>
+      <li><strong>Start date.</strong> It can be up to 60 days after your program end date. OPT gives up to 12 months of work authorization.</li>
+      <li><strong>Grace period.</strong> After your work permit ends you can stay in F-1 status for 60 days, but you cannot work.</li>
+      <li><strong>Unemployment.</strong> You can accrue no more than 90 days of unemployment during the first 12 months of OPT, and no more than 150 days in total if you also have a STEM extension.</li>
+      <li><strong>STEM OPT.</strong> You can file up to 90 days before your OPT work permit ends, and before it ends. USCIS must receive your application within 60 days after your DSO recommends it. The extension is 24 months in a row.</li>
+      <li><strong>If you filed STEM OPT in time</strong> you may keep working for up to 180 days after your OPT ends, or until USCIS decides, whichever comes first.</li>
+      <li><strong>H-1B cap-gap.</strong> If an H-1B petition is filed for you, your status and work authorization can be extended. This tool does not calculate it, so ask your DSO.</li>
+    </ul>
+
+    <h2>Speed it up?</h2>
+    <p>You can pay for premium processing of your OPT application. USCIS then has 30 business days to act. See <a href="/blog/what-is-premium-processing/">what premium processing is</a>, count your days with the <a href="/tools/opt-premium-processing-tracker/">OPT premium processing day tracker</a>, and compare options with <a href="/tools/premium-processing-worth-it/">Is premium processing worth it?</a>.</p>
+    <p class="small"><strong>Privacy:</strong> Everything is worked out in your browser. The dates you enter are not sent to us or stored.</p>
+
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/sevis-fee-calculator/">How much is the SEVIS fee?</a></li>
+      <li><a href="/tools/uscis-fee-calculator/">USCIS filing fee calculator</a></li>
+      <li><a href="/tools/opt-premium-processing-tracker/">OPT premium processing day tracker</a></li>
+    </ul>
+
+    <div class="sources"><h2>Official sources</h2><ul>
+      <li><a href="https://www.uscis.gov/policy-manual/volume-2-part-f-chapter-5" rel="noopener">USCIS Policy Manual, Volume 2, Part F, Chapter 5: Practical Training</a></li>
+      <li><a href="https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors/optional-practical-training-extension-for-stem-students-stem-opt" rel="noopener">USCIS: STEM OPT extension</a></li>
+      <li><a href="https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.2" rel="noopener">8 CFR 214.2(f): F-1 students</a></li>
+      <li><a href="https://studyinthestates.dhs.gov/students/work/after-completing-studies" rel="noopener">Study in the States: working after you finish your studies</a></li>
+    </ul></div>
+  </main>
+
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/opt-date-planner/planner.js"></script>
+</body>
+</html>
