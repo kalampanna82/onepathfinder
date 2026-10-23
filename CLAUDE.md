@@ -33,7 +33,7 @@ I-130 petition tool is ON HOLD until the owner has more research and lawyer guid
 - Green/red/blue are used only for status (forward / backward / no change).
 
 ## Planned
-Multilingual versions: Spanish, Hindi, Urdu, Bangla, Arabic, Filipino/Tagalog (Arabic and Urdu need RTL). Not started.
+Multilingual versions, first wave of 5: Spanish, Bangla, Hindi, Urdu, Arabic (Arabic and Urdu need RTL). Separate URL per language (/es/, /bn/, /hi/, /ur/, /ar/), each reviewed by a native speaker before launch. Possible second wave: Filipino/Tagalog, Chinese, Portuguese, Haitian Creole, Korean. Not started.
 
 ## Rules
 - Cite official sources (USCIS, travel.state.gov, IRS) with links. Keep immigration claims accurate.
@@ -63,4 +63,5 @@ Multilingual versions: Spanish, Hindi, Urdu, Bangla, Arabic, Filipino/Tagalog (A
 - 2026-10-23: Added a site-wide "Site under development" notice (the `site-notice` block after the skip link on every page, style at the end of `styles.css`): information and tool logic are still being verified, do not rely on it yet. New pages must copy it. To remove it later, delete the `site-notice` comment and div from every page and the two CSS rules.
 - 2026-10-23: Added Substantial presence test calculator at /tools/substantial-presence-test/ (linked from /tax/). Rules from IRS pages (Substantial presence test, reviewed 14 Mar 2026; Teachers and trainees, 16 Apr 2026) and Form 8843 instructions (2025): 31 days this year and current + 1/3 prior + 1/6 year-before >= 183 (compared in integers, 6*c+2*p1+p2 >= 1098); students exempt up to 5 calendar years (more: only if no intent to reside permanently, shown as 'it depends'); teachers/trainees not exempt if exempt in 2 of the 6 prior years, unless 3 or fewer and a foreign employer paid all pay. Covers the substantial presence test only (not the green card test or dual-status years). Prior-year exempt days are entered by the visitor. Re-check when the IRS updates these pages or the form.
 - Open: choose a path-based logo concept; then update the logo files and `brand/`.
-- Open: multilingual rollout plan and URL structure (for example /es/).
+- 2026-10-23: Owner decided multilingual starts with 5 languages (Spanish, Bangla, Hindi, Urdu, Arabic) on separate URLs per language, with native-speaker review. Filipino/Tagalog moved to a possible second wave.
+- Open: multilingual rollout plan (which pages to translate first, shared `styles.css` RTL rules, hreflang tags, sitemap entries). Nothing built yet.
