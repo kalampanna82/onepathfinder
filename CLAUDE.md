@@ -56,7 +56,7 @@ Owner's claude.ai prototypes (Oct 2026) for tool ideas. Use them for the logic, 
 
 ## Decisions and open items
 - 2026-10-22: Added Visa Bulletin movement tool (Oct to Nov 2026) at /tools/visa-bulletin-movement/ (PR #13). It was briefly added to the PentoGIS repo by mistake and removed.
-- 2026-10-22: Priority date checker now holds October and November bulletins and switches to November at 12:01 AM Eastern on Nov 1, 2026. Merge before then.
+- 2026-10-22: Priority date checker now holds October and November bulletins and switches to November at 12:01 AM Eastern on Nov 1, 2026. Merge before then. While the next bulletin is published but not yet in effect, the checker also shows what it means for the user's date and when it starts.
 - 2026-10-22: Added SEVIS I-901 fee calculator at /tools/sevis-fee-calculator/. Amounts are in `CATS` in `sevis.js` (F/M $350, J-1 $220, au pair/camp/summer work $35, G-programs and F-2/M-2/J-2 $0), last checked against ICE in Oct 2026. Re-check on ice.gov/sevis/i901 when ICE announces a change.
 - 2026-10-22: USCIS fee calculator (/tools/uscis-fee-calculator/) now also lists fees by category (family, citizenship, work, asylum/parole/TPS) with search; about 30 forms. All fees live in `FORMS` in `fees.js` (one source; the page renders from it). Fees as of Oct 22, 2026 incl. the Oct 16, 2026 changes (annual asylum $105, first asylum/parole/TPS work permit $570, parole $1,050, TPS $520; `isNew: true`). Re-check against G-1055 when USCIS announces a change, and clear `isNew` badges after a few months.
 - 2026-10-22: Added blog post "What is the SEVIS fee? Why do you have to pay it?" at /blog/what-is-the-sevis-fee/, linked from the SEVIS fee tool. Facts from ICE I-901 page and FAQ; re-check if ICE changes fee or rules.

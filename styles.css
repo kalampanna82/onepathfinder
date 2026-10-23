@@ -237,6 +237,15 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
 .pd-yes .pd-head{color:#14602f}
 .pd-no .pd-head{color:#8f1d17}
 .pd-head span{margin-right:8px}
+.pd-next{margin:20px 0 0;padding:18px 20px;border-left:8px solid var(--line);background:var(--paper);border-radius:0 8px 8px 0}
+.pd-next-good{background:#e6f6ed;border-left-color:#1a7a3c}
+.pd-next-warn{background:#fdecea;border-left-color:#b3261e}
+.pd-next-head{font-family:var(--serif);font-size:1.35rem;font-weight:700;margin:0 0 8px;line-height:1.25;color:var(--ink)}
+.pd-next-good .pd-next-head{color:#14602f}
+.pd-next-warn .pd-next-head{color:#8f1d17}
+.pd-next-head span{margin-right:8px}
+.pd-next p{color:var(--ink)}
+.pd-next .small{color:var(--muted);margin:10px 0 0}
 .choices.stack{margin-top:6px}
 fieldset.field{border:0;padding:0;margin:0 0 24px;min-width:0}
 fieldset.field legend{padding:0;font-weight:600;margin-bottom:4px}

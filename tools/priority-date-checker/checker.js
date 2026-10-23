@@ -75,7 +75,41 @@
     return best || first || file.bulletins[0];
   }
 
-  var api = { check: check, pick: pick, parse: parse, fmt: fmt, COUNTRIES: COUNTRIES, CATEGORIES: CATEGORIES };
+  // Calendar days from now to a moment, counted in Eastern time (the bulletin month starts at 12:01 AM Eastern).
+  function etDay(ms) {
+    var p = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date(ms)), v = {};
+    p.forEach(function (x) { v[x.type] = x.value; });
+    return Date.UTC(+v.year, +v.month - 1, +v.day);
+  }
+  function daysUntil(nowMs, atMs) { return Math.round((etDay(atMs) - etDay(nowMs)) / 864e5); }
+
+  // The next bulletin that is already published but has not started yet, if any.
+  function upcoming(file, now) {
+    if (!file || !file.bulletins) return null;
+    var t = (now instanceof Date ? now : new Date()).getTime(), next = null;
+    file.bulletins.forEach(function (b) {
+      var at = Date.parse(b.effectiveFrom);
+      if (!isNaN(at) && at > t && (next === null || at < Date.parse(next.effectiveFrom))) next = b;
+    });
+    return next;
+  }
+
+  // What the published-but-not-yet-effective bulletin means for this person.
+  // kind: 'becomes-current' | 'stays-current' | 'no-longer-current' | 'still-not-current' (null when no next bulletin).
+  function forecast(file, input, now) {
+    var n = now instanceof Date ? now : new Date();
+    var next = upcoming(file, n);
+    if (!next) return null;
+    var active = pick(file, n);
+    var nowRes = check(active, input), nextRes = check(next, input);
+    if (nowRes.error || nextRes.error) return null;
+    var isCur = function (r) { return r.status === 'current'; };
+    var kind = isCur(nextRes) ? (isCur(nowRes) ? 'stays-current' : 'becomes-current') : (isCur(nowRes) ? 'no-longer-current' : 'still-not-current');
+    var at = Date.parse(next.effectiveFrom);
+    return { kind: kind, next: next, nextRes: nextRes, nowRes: nowRes, active: active, effectiveFrom: at, days: daysUntil(n.getTime(), at) };
+  }
+
+  var api = { check: check, pick: pick, upcoming: upcoming, forecast: forecast, daysUntil: daysUntil, parse: parse, fmt: fmt, COUNTRIES: COUNTRIES, CATEGORIES: CATEGORIES };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.PDCheck = api;
 
@@ -85,7 +119,7 @@
     if (!form) return;
     var out = document.getElementById('pd-result');
     var meta = document.getElementById('pd-meta');
-    var data = null;
+    var data = null, file = null;
 
     function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
     Object.keys(CATEGORIES).forEach(function (k) { var o = document.createElement('option'); o.value = k; o.textContent = CATEGORIES[k]; form.category.appendChild(o); });
@@ -93,12 +127,50 @@
     form.category.value = 'F4'; form.country.value = 'all';
 
     fetch('bulletin.json', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error('bad'); return r.json(); }).then(function (d) {
-      d = pick(d, new Date());
+      file = d;
+      d = pick(file, new Date());
       data = d;
       meta.innerHTML = 'Based on the <a href="' + esc(d.source) + '" rel="noopener">' + esc(d.bulletinMonth) + ' Visa Bulletin</a> (published ' + esc(fmt(parse(d.published))) + ').';
+      var up = upcoming(file, new Date());
+      if (up) meta.innerHTML += ' The <a href="' + esc(up.source) + '" rel="noopener">' + esc(up.bulletinMonth) + ' bulletin</a> is already published and takes effect ' + esc(whenText(daysUntil(Date.now(), Date.parse(up.effectiveFrom)))) + '. We show both.';
     }).catch(function () {
       meta.innerHTML = 'We couldn’t load the bulletin data. Please check the <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">official Visa Bulletin</a>.';
     });
+
+    function whenText(days) {
+      if (days <= 0) return 'now';
+      if (days === 1) return 'tomorrow';
+      return 'in ' + days + ' days';
+    }
+    function startDate(f) {
+      var d = new Date(Date.parse(f.next.effectiveFrom));
+      return new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'long', day: 'numeric', year: 'numeric' }).format(d);
+    }
+    // Box about the next bulletin, shown only while it is published but not yet in effect.
+    function nextBox(f, chart) {
+      if (!f) return '';
+      var m = esc(f.next.bulletinMonth), c = esc(chartName(chart)), cut = esc(f.nextRes.cutoffText), when = esc(startDate(f)), wt = esc(whenText(f.days));
+      var head, body, cls;
+      if (f.kind === 'becomes-current') {
+        cls = 'pd-next pd-next-good';
+        head = '<span aria-hidden="true">✓</span> Congratulations. Your date becomes current on ' + when;
+        body = '<p>The ' + m + ' Visa Bulletin is already published. In it, your priority date is ' + (f.nextRes.cutoff === 'C' ? 'current for everyone in this category and country' : 'earlier than the cutoff date (' + c + ': ' + cut + ')') + '. That bulletin takes effect ' + wt + ', on ' + when + '.</p>';
+      } else if (f.kind === 'stays-current') {
+        cls = 'pd-next pd-next-good';
+        head = '<span aria-hidden="true">✓</span> Still current in the ' + m + ' bulletin';
+        body = '<p>The ' + m + ' Visa Bulletin is already published and your priority date stays current in it (' + c + ': ' + cut + '). It takes effect ' + wt + ', on ' + when + '.</p>';
+      } else if (f.kind === 'no-longer-current') {
+        cls = 'pd-next pd-next-warn';
+        head = '<span aria-hidden="true">!</span> Heads up: not current in the ' + m + ' bulletin';
+        body = '<p>Your date is current in the ' + esc(f.active.bulletinMonth) + ' bulletin, but the ' + m + ' Visa Bulletin (' + c + ') has a cutoff of ' + cut + '. It takes effect ' + wt + ', on ' + when + '. Ask a licensed attorney or accredited representative what this means for your case.</p>';
+      } else {
+        cls = 'pd-next pd-next-info';
+        head = 'Not current in the ' + m + ' bulletin either';
+        body = '<p>The ' + m + ' Visa Bulletin is already published (' + c + ' cutoff: ' + cut + '). It takes effect ' + wt + ', on ' + when + '. Your date is still later than the cutoff.</p>';
+      }
+      return '<div class="' + cls + '"><p class="pd-next-head">' + head + '</p>' + body +
+        '<p class="small">Based on the published bulletin. Cutoff dates can change again, and for a green card application inside the U.S., USCIS says each month which chart to use. This is not legal advice and does not mean your case is approved.</p></div>';
+    }
 
     function chartName(c) { return c === 'final' ? 'Final Action Dates' : 'Dates for Filing'; }
     function line(c, r) {
@@ -109,7 +181,9 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!data) { out.className = 'result result-error'; out.innerHTML = '<p><strong>Bulletin data not loaded.</strong> Please refresh the page or check the official Visa Bulletin.</p>'; out.focus(); return; }
-      var r = check(data, { category: form.category.value, country: form.country.value, chart: form.chart.value, pd: form.pd.value });
+      data = pick(file, new Date());
+      var input = { category: form.category.value, country: form.country.value, chart: form.chart.value, pd: form.pd.value };
+      var r = check(data, input);
       if (r.error) { out.className = 'result result-error'; out.innerHTML = '<p><strong>Check your entries.</strong> ' + esc(r.error) + '</p>'; out.focus(); return; }
       var html;
       if (r.status === 'current') {
@@ -123,6 +197,7 @@
         html = '<p class="pd-head"><span aria-hidden="true">✗</span> Not current yet</p><p>The cutoff in the ' + esc(data.bulletinMonth) + ' Visa Bulletin (' + esc(chartName(r.chart)) + ') is ' + esc(r.cutoffText) + '. Your priority date is later than the cutoff (by ' + esc(r.gap) + '). Cutoff dates can move forward, stay the same, or move backward.</p>';
       }
       html += '<p class="small">' + esc(line(r.otherChart, r.other)) + '</p>';
+      html += nextBox(forecast(file, input, new Date()), r.chart);
       if (r.stale) html += '<p class="small"><strong>This data is for ' + esc(data.bulletinMonth) + '.</strong> A newer bulletin may be out. Check the <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html" rel="noopener">official Visa Bulletin</a>.</p>';
       html += '<p class="small">This is general information, not legal advice. A &ldquo;current&rdquo; result does not mean your case is approved or that you can file; other steps and rules apply.</p>';
       out.innerHTML = html;
