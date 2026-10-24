@@ -1,7 +1,7 @@
 # One Path Finder (onepathfinder.com)
 
 One Path Finder LLC: immigration and tax document preparation. Sections: /immigration/, /tax/, Blog, Tools.
-Hosted on Cloudflare Pages; every push to `main` deploys. Owner: kalampanna82.
+Hosted on Cloudflare Pages (project `onepathfinder`); every push to `main` deploys. Owner: kalampanna82. GitHub repo: `kalampanna82/onepathfinder.com` (renamed from `onepathfinder`; the old URL redirects, never create a new repo with the old name).
 
 ## Stack and commands
 Plain static HTML, one shared `styles.css`, one shared `script.js`, small per-tool JS files. No framework, no package.json, no build step.
@@ -76,3 +76,4 @@ Owner's claude.ai prototypes (Oct 2026) for tool ideas. Use them for the logic, 
 - 2026-10-23: Added NJ resident or nonresident tracker at /tools/nj-residency-tracker/ (linked from /tax/). Rules from NJ GIT-6 and the NJ-1040/1040NR instructions; thresholds in `THRESHOLDS` in `nj.js` ($10,000 / $20,000, gross income from everywhere for the whole year; nonresidents file only with NJ-source income). irs.gov and nj.gov cannot be fetched from the Claude sandbox; facts were checked through web search of those sites. Re-check thresholds against the current NJ-1040 instructions each year.
 - Open: lead capture / consultation requests (prototypes have one; site has none). Needs owner decision on where submissions go and a privacy policy update.
 - Open: multilingual rollout plan (which pages to translate first, shared `styles.css` RTL rules, hreflang tags, sitemap entries). Nothing built yet.
+- 2026-10-24: Repo renamed to `kalampanna82/onepathfinder.com` to match the domain (also `pentogis.com`; the getready repos already used domain names). Added `CLAUDE.md` to the other 4 repos. Confirmed all 5 sites deploy through Cloudflare Pages; getready.academy's duplicate GitHub Pages site was unpublished.
