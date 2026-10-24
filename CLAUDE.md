@@ -50,6 +50,7 @@ Owner's claude.ai prototypes (Oct 2026) for tool ideas. Use them for the logic, 
 - Match existing style and markup. No new dependencies without a stated reason.
 
 ## Workflow
+- When delivering work, always give the owner the PR link and the live page link.
 - Pull requests only, never push to `main`. Keep each PR small and focused, with a description and test steps. The owner reviews and merges, unless he explicitly asks Claude to merge.
 - The owner handles logins, DNS and Search Console. Do not attempt these.
 - At the end of each session, update "Decisions and open items" below.
@@ -77,3 +78,7 @@ Owner's claude.ai prototypes (Oct 2026) for tool ideas. Use them for the logic, 
 - Open: lead capture / consultation requests (prototypes have one; site has none). Needs owner decision on where submissions go and a privacy policy update.
 - Open: multilingual rollout plan (which pages to translate first, shared `styles.css` RTL rules, hreflang tags, sitemap entries). Nothing built yet.
 - 2026-10-24: Repo renamed to `kalampanna82/onepathfinder.com` to match the domain (also `pentogis.com`; the getready repos already used domain names). Added `CLAUDE.md` to the other 4 repos. Confirmed all 5 sites deploy through Cloudflare Pages; getready.academy's duplicate GitHub Pages site was unpublished.
+- Open (tool ideas, in order, from the 2026-10-23 session): H-1B 60-day grace period calculator, EAD renewal planner, document checklist generator, naturalization civics practice, unlawful presence estimator, premium processing eligibility checker.
+- Open (manual upkeep): update `tools/premium-processing-worth-it/processing.json` monthly (USCIS site cannot be read from the sandbox); backfill `src: mirror` months in `history.json`; spot-check fee amounts against G-1055.
+- Open (unverified, check before removing the `site-notice`): OPT start on the program end date itself; exact unemployment-day counting (ask a DSO); premium-processing non-eligible forms (I-485, N-400, I-130).
+- 2026-10-24: Rescued two commits pushed after their PRs merged: priority checker next-bulletin box (PR #35) and the worth-it Compare button (PR #36). Old branches are fully merged and can be deleted.
