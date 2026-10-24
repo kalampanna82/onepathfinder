@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>H-1B 60-Day Grace Period Calculator: Your Last Day After a Job Ends | One Path Finder</title>
+  <meta name="description" content="Lost your H-1B, L-1, O-1, E or TN job? Enter your last day of work and I-94 date to see when your 60-day grace period ends and how many days are left. Free tool. Not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/h1b-grace-period-calculator/">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="H-1B 60-Day Grace Period Calculator: Your Last Day After a Job Ends | One Path Finder">
+  <meta property="og:description" content="Lost your H-1B, L-1, O-1, E or TN job? Enter your last day of work and I-94 date to see when your 60-day grace period ends and how many days are left. Free tool. Not legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/h1b-grace-period-calculator/">
+  <meta property="og:image" content="https://onepathfinder.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://onepathfinder.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/tools/h1b-grace-period-calculator/grace.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <!-- site-notice: remove this block from every page when the tools are verified -->
+  <div class="site-notice" role="note"><strong>Site under development.</strong> We are still verifying the information and calculations in our tools. Please do not rely on this site for decisions yet.</div>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="273" height="56"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>H-1B 60-day grace period calculator</h1>
+    <p class="lead">If your job ends while you are in H-1B, H-1B1, L-1, O-1, E-1, E-2, E-3 or TN status, you may have up to 60 days to stay in the U.S. and find your next step. Enter your last day of work and your I-94 date to see when your grace period ends and how many days you have left.</p>
+    <div class="callout"><p><strong>DHS has proposed ending this grace period.</strong> On September 11, 2026 the Department of Homeland Security published a proposed rule to remove the 60-day grace period (<a href="https://www.federalregister.gov/documents/2026/09/11/2026-18631/eliminating-the-discretionary-60-day-grace-period" rel="noopener">Federal Register 2026-18631</a>). Public comments close November 10, 2026. It is a proposal, not a final rule: the grace period still applies today. If DHS publishes a final rule, it will say when the change takes effect, and we will update this page.</p></div>
+    <div class="callout"><p><strong>A calendar, not a decision.</strong> The grace period is discretionary: USCIS can shorten it or refuse it when it decides your next filing. Losing a job can affect your status, your family&rsquo;s status and a pending green card case. Talk to an immigration attorney as soon as you can. This is general information, not legal advice.</p></div>
+
+    <form id="gp-form" class="calc" novalidate>
+      <div class="field">
+        <label for="gp-class">Your status when the job ended</label>
+        <select id="gp-class" name="class">
+          <option value="H-1B">H-1B</option>
+          <option value="H-1B1">H-1B1 (Chile, Singapore)</option>
+          <option value="L-1">L-1</option>
+          <option value="O-1">O-1</option>
+          <option value="E-1">E-1</option>
+          <option value="E-2">E-2</option>
+          <option value="E-3">E-3 (Australia)</option>
+          <option value="TN">TN (Canada, Mexico)</option>
+          <option value="other">Something else (for example F-1 OPT, H-2B, H-4)</option>
+        </select>
+        <p class="hint">Dependents (for example H-4 or L-2) follow the worker&rsquo;s grace period. Choose the worker&rsquo;s status.</p>
+      </div>
+      <div class="field">
+        <label for="gp-last">Last day of employment</label>
+        <p class="hint">USCIS usually goes by the last day you were paid a salary or wage, which can be later than your last day in the office (for example, if you were paid through a notice period).</p>
+        <input type="date" id="gp-last" name="last">
+      </div>
+      <div class="field">
+        <label for="gp-i94">I-94 end date <span class="small">(optional, but check it)</span></label>
+        <p class="hint">The &ldquo;Admit until&rdquo; date on your most recent I-94 (from <a href="https://i94.cbp.dhs.gov/" rel="noopener">i94.cbp.dhs.gov</a>) or on the I-94 attached to your approval notice. The grace period cannot run past it.</p>
+        <input type="date" id="gp-i94" name="i94">
+      </div>
+      <div class="field">
+        <label for="gp-used">Have you already used a grace period with this petition?</label>
+        <p class="hint">You get it once during each authorized validity period (usually the period of your current approved petition and I-94).</p>
+        <select id="gp-used" name="used"><option value="no">No</option><option value="yes">Yes</option><option value="unsure">Not sure</option></select>
+      </div>
+      <div class="field">
+        <label for="gp-abroad">Were you outside the U.S. when the job ended?</label>
+        <select id="gp-abroad" name="abroad"><option value="no">No, I was in the U.S.</option><option value="yes">Yes</option></select>
+      </div>
+      <div class="field">
+        <label for="gp-asof">Today <span class="small">(change it to look at another day)</span></label>
+        <input type="date" id="gp-asof" name="asof">
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn primary">Show my dates</button>
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="gp-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>The rules behind these dates</h2>
+    <ul>
+      <li><strong>Who gets it.</strong> Workers in E-1, E-2, E-3, H-1B, H-1B1, L-1, O-1 and TN status, and their dependents, whose employment ends, whether they quit or were let go.</li>
+      <li><strong>How long.</strong> Up to 60 days in a row, or until your I-94 ends, whichever comes first. It is a maximum, not a promise.</li>
+      <li><strong>When it starts.</strong> The day after your employment ends, usually the last day you were paid.</li>
+      <li><strong>How often.</strong> Once during each authorized validity period. A new approved petition (for example with a new employer) starts a new validity period.</li>
+      <li><strong>No work.</strong> You cannot work during the grace period unless you are otherwise authorized. H-1B workers can start with a new H-1B employer once that employer properly files a nonfrivolous petition for them (H-1B portability).</li>
+      <li><strong>Travel ends it.</strong> Leaving the U.S. ends the grace period. If you were abroad when your employment ended, it generally does not apply.</li>
+    </ul>
+
+    <h2>What you can do before it ends</h2>
+    <p>USCIS lists these options. If you take one of them in time, you may be able to stay past the 60 days. If you do none of them, you and your family may need to leave by the last day of the grace period.</p>
+    <ul>
+      <li>A new employer files a nonfrivolous petition for you (for H-1B, you can usually start working once it is filed).</li>
+      <li>File to change to another nonimmigrant status (for example H-4, F-1 or B-2) on Form I-539 or through a new employer&rsquo;s petition.</li>
+      <li>File to adjust status to permanent residence (Form I-485), if you are eligible.</li>
+      <li>Apply for a compelling circumstances work permit, if you have an approved immigrant petition and meet the other conditions.</li>
+      <li>Leave the U.S.</li>
+    </ul>
+    <p>Each choice depends on your case, so ask an immigration attorney which fits you. See current filing fees in the <a href="/tools/uscis-fee-calculator/">USCIS fee calculator</a>, and check whether faster processing helps with <a href="/tools/premium-processing-worth-it/">Is premium processing worth it?</a>.</p>
+    <p class="small"><strong>Privacy:</strong> Everything is worked out in your browser. The dates you enter are not sent to us or stored.</p>
+
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/uscis-fee-calculator/">USCIS filing fee calculator</a></li>
+      <li><a href="/tools/premium-processing-worth-it/">Is premium processing worth it?</a></li>
+      <li><a href="/tools/opt-date-planner/">OPT and STEM OPT date planner</a></li>
+    </ul>
+
+    <div class="sources"><h2>Official sources</h2><ul>
+      <li><a href="https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-214/section-214.1" rel="noopener">8 CFR 214.1(l)(2): the 60-day grace period</a></li>
+      <li><a href="https://www.uscis.gov/archive/options-for-nonimmigrant-workers-following-termination-of-employment-0" rel="noopener">USCIS: Options for nonimmigrant workers following termination of employment</a></li>
+      <li><a href="https://www.federalregister.gov/documents/2026/09/11/2026-18631/eliminating-the-discretionary-60-day-grace-period" rel="noopener">Federal Register, Sep 11, 2026: Eliminating the Discretionary 60-Day Grace Period (proposed rule)</a></li>
+      <li><a href="https://www.regulations.gov/document/USCIS-2026-0364-0001" rel="noopener">Regulations.gov docket USCIS-2026-0364: comment on the proposed rule</a></li>
+      <li><a href="https://i94.cbp.dhs.gov/" rel="noopener">CBP: get your most recent I-94</a></li>
+    </ul></div>
+  </main>
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/h1b-grace-period-calculator/grace.js"></script>
+</body>
+</html>
