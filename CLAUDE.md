@@ -83,3 +83,4 @@ Owner's claude.ai prototypes (Oct 2026) for tool ideas. Use them for the logic, 
 - Open (unverified, check before removing the `site-notice`): OPT start on the program end date itself; exact unemployment-day counting (ask a DSO); premium-processing non-eligible forms (I-485, N-400, I-130).
 - 2026-10-24: Rescued two commits pushed after their PRs merged: priority checker next-bulletin box (PR #35) and the worth-it Compare button (PR #36). Old branches are fully merged and can be deleted.
 - 2026-10-24: Re-enabled the Visa Bulletin scheduled task (it was paused) and corrected its schedule above to the 21st/23rd/25th/27th. travel.state.gov answers 403 to Claude cloud sessions (page and PDF), so the owner chose to supply each bulletin: the task asks for it and waits for the owner's reply, with no mirrors.
+- 2026-10-24: Added the missing /tax/ page to `sitemap.xml`. Every page except 404 is now listed.
