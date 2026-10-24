@@ -268,3 +268,4 @@ fieldset.field legend{padding:0;font-weight:600;margin-bottom:4px}
 .fee-bar a:focus-visible{outline-color:#fff}
 .site-notice{background:var(--navy);color:#fff;padding:10px var(--gutter);font-size:.9rem;line-height:1.45;text-align:center}
 .site-notice strong{color:var(--amber)}
+.footer-notice strong{color:var(--ink)}
