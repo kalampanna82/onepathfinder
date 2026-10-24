@@ -1,0 +1,17 @@
+/* EAD renewal planner. Status colors only: green for upcoming, red for problems, per the site's rules. */
+.ead-h{font-size:1.5rem;margin:0 0 10px}
+.ead-h3{font-size:1.15rem;margin:20px 0 8px}
+.ead-msg{margin:0 0 12px;padding:12px 16px;border-left:6px solid}
+.ead-bad{background:#fdecea;border-left-color:#b3261e}
+.ead-list{list-style:none;margin:0 0 8px;padding:0}
+.ead-list li{padding:12px 0;border-top:1px solid var(--line)}
+.ead-list li:last-child{border-bottom:1px solid var(--line)}
+.ead-top{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;justify-content:space-between}
+.ead-date{font-family:var(--serif);font-size:1.15rem;font-weight:700}
+.ead-title{font-weight:600;margin:2px 0}
+.ead-chip{display:inline-block;padding:2px 10px;border-radius:999px;font-weight:700;font-size:.85rem;white-space:nowrap}
+.ead-c-past{background:var(--line);color:#4b5563}
+.ead-c-today{background:#17744a;color:#fff}
+.ead-c-soon{background:#e6f6ed;color:#17744a}
+.ead-past .ead-date,.ead-past .ead-title{color:#6b7280}
+.ead-ok{background:#e6f6ed;border-left-color:#17744a}
