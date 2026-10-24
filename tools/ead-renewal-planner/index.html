@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EAD Renewal Planner: When to File So Your Work Permit Does Not Lapse | One Path Finder</title>
+  <meta name="description" content="Automatic EAD extensions ended for most renewals. Enter your card expiry date and the USCIS processing time to see when to file and whether you may face a gap. Free tool. Not legal advice.">
+  <link rel="canonical" href="https://onepathfinder.com/tools/ead-renewal-planner/">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="One Path Finder">
+  <meta property="og:title" content="EAD Renewal Planner: When to File So Your Work Permit Does Not Lapse | One Path Finder">
+  <meta property="og:description" content="Automatic EAD extensions ended for most renewals. Enter your card expiry date and the USCIS processing time to see when to file and whether you may face a gap. Free tool. Not legal advice.">
+  <meta property="og:url" content="https://onepathfinder.com/tools/ead-renewal-planner/">
+  <meta property="og:image" content="https://onepathfinder.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://onepathfinder.com/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/tools/ead-renewal-planner/ead.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav">
+    <a href="/" class="brand"><img src="/logo-nav.svg" alt="One Path Finder" width="273" height="56"></a>
+    <nav aria-label="Main">
+      <a href="/immigration/">Immigration</a>
+      <a href="/tax/">Tax</a>
+      <a href="/tools/">Tools</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <a class="back" href="/tools/">&larr; All tools</a>
+    <h1>EAD renewal planner</h1>
+    <p class="lead">Most work permit (EAD) renewals no longer get an automatic extension. If your new card is not approved by the time the old one expires, you may have to stop working. Enter your card&rsquo;s expiry date and the current USCIS processing time to see when to file and whether a gap is likely.</p>
+    <div class="callout"><p><strong>What changed.</strong> For EAD renewals filed on or after October 30, 2025, USCIS no longer extends your work permit automatically while the renewal is pending. DHS made this final in a rule effective October 14, 2026 (<a href="https://www.federalregister.gov/documents/2026/10/14/2026-20955/removal-of-automatic-extensions-for-certain-employment-authorization-documents" rel="noopener">Federal Register 2026-20955</a>). A receipt notice alone does not let you keep working after your card expires. Exceptions include TPS, E and L spouses and F-1 STEM OPT. The rule is being challenged in court, so check for news before you rely on it.</p></div>
+    <div class="callout"><p><strong>A calendar, not a decision.</strong> USCIS decides when your card is approved, and processing times change every month. These dates are estimates. Talk to your employer and an immigration attorney early. This is general information, not legal advice.</p></div>
+
+    <form id="ead-form" class="calc" novalidate>
+      <div class="field">
+        <label for="ead-cat">Your EAD type</label>
+        <select id="ead-cat" name="cat">
+          <option value="standard">Most renewals (for example a pending green card (c)(9), asylum applicant (c)(8), H-4 spouse (c)(26), parole)</option>
+          <option value="tps">TPS (a)(12) or (c)(19)</option>
+          <option value="el">E or L spouse</option>
+          <option value="stem">F-1 STEM OPT extension</option>
+        </select>
+        <p class="hint">The category is printed on your card, for example &ldquo;C09&rdquo; or &ldquo;A12&rdquo;.</p>
+      </div>
+      <div class="field">
+        <label for="ead-exp">Your current EAD expires on</label>
+        <p class="hint">The &ldquo;Card expires&rdquo; date on the front of your card.</p>
+        <input type="date" id="ead-exp" name="exp">
+      </div>
+      <div class="field">
+        <label for="ead-months">USCIS processing time, in months <span class="small">(optional, but it is the key number)</span></label>
+        <p class="hint">Look it up on <a href="https://egov.uscis.gov/processing-times/" rel="noopener">USCIS processing times</a>: choose Form I-765, your category and office, and enter the number of months shown. It changes every month.</p>
+        <input type="number" id="ead-months" name="months" min="0.5" max="60" step="0.5" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="ead-filed">Date USCIS received your renewal <span class="small">(if you already filed)</span></label>
+        <p class="hint">The &ldquo;Received date&rdquo; on your Form I-797C receipt notice.</p>
+        <input type="date" id="ead-filed" name="filed">
+      </div>
+      <div class="field">
+        <label for="ead-asof">Today <span class="small">(change it to look at another day)</span></label>
+        <input type="date" id="ead-asof" name="asof">
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn primary">Show my dates</button>
+        <button type="reset" class="btn secondary">Clear</button>
+      </div>
+    </form>
+
+    <div id="ead-result" class="result" tabindex="-1" aria-live="polite"></div>
+
+    <h2>The rules behind these dates</h2>
+    <ul>
+      <li><strong>When to file.</strong> USCIS says you can file Form I-765 to renew your EAD up to 180 days before it expires. Filing early does not cut short your current card.</li>
+      <li><strong>No automatic extension for most renewals.</strong> If you filed on or after October 30, 2025, your work permit ends on the date on your card unless the new card is approved first. Renewals filed before October 30, 2025 keep any automatic extension they already had.</li>
+      <li><strong>TPS.</strong> TPS EADs can still be extended automatically by law or by a Federal Register notice for your country. Check the USCIS page for your country.</li>
+      <li><strong>E and L spouses</strong> are work authorized because of their status, and STEM OPT students who file on time keep an extension of up to 180 days.</li>
+      <li><strong>A gap means no work.</strong> Your employer has to re-check your work permit (Form I-9) when your card expires. Plan ahead with them.</li>
+    </ul>
+    <p>See the current I-765 fee in the <a href="/tools/uscis-fee-calculator/">USCIS fee calculator</a>.</p>
+    <p class="small"><strong>Privacy:</strong> Everything is worked out in your browser. The dates you enter are not sent to us or stored.</p>
+
+    <h2>Need help organizing your documents?</h2>
+    <p>One Path Finder can help you gather and organize documents where permitted by law. We are not a law firm and can&rsquo;t tell you what applies to your case. <a href="/#contact">Contact us</a> to start a conversation.</p>
+
+    <h2>More tools</h2>
+    <ul>
+      <li><a href="/tools/uscis-fee-calculator/">USCIS filing fee calculator</a></li>
+      <li><a href="/tools/opt-date-planner/">OPT and STEM OPT date planner</a></li>
+      <li><a href="/tools/h1b-grace-period-calculator/">H-1B 60-day grace period calculator</a></li>
+    </ul>
+
+    <div class="sources"><h2>Official sources</h2><ul>
+      <li><a href="https://www.uscis.gov/i-765" rel="noopener">USCIS: Form I-765, Application for Employment Authorization</a></li>
+      <li><a href="https://www.uscis.gov/green-card/green-card-processes-and-procedures/employment-authorization-document" rel="noopener">USCIS: Employment Authorization Document</a></li>
+      <li><a href="https://www.uscis.gov/newsroom/news-releases/dhs-ends-automatic-extension-of-employment-authorization" rel="noopener">USCIS news release: DHS ends automatic extension of employment authorization</a></li>
+      <li><a href="https://www.federalregister.gov/documents/2025/10/30/2025-19702/removal-of-the-automatic-extension-of-employment-authorization-documents" rel="noopener">Federal Register, Oct 30, 2025: interim final rule</a></li>
+      <li><a href="https://www.federalregister.gov/documents/2026/10/14/2026-20955/removal-of-automatic-extensions-for-certain-employment-authorization-documents" rel="noopener">Federal Register, Oct 14, 2026: final rule</a></li>
+      <li><a href="https://egov.uscis.gov/processing-times/" rel="noopener">USCIS: check case processing times</a></li>
+    </ul></div>
+  </main>
+  <footer>
+    <p>One Path Finder is not a law firm and does not provide legal advice.</p>
+    <!-- site-notice: remove this line from every page when the tools are verified -->
+    <p class="footer-notice"><strong>Site under development.</strong> We are still verifying the information and calculations in our tools. Please do not rely on this site for decisions yet.</p>
+    <p>© <span id="year"></span> One Path Finder LLC. All rights reserved.</p>
+    <p class="footer-links"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms &amp; Disclaimer</a></p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/tools/ead-renewal-planner/ead.js"></script>
+</body>
+</html>
